@@ -13,5 +13,7 @@
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
+- (IBAction)dismiss:(UIStoryboardSegue*)unwindSegue;
+- (IBAction)submit:(UIStoryboardSegue*)unwindSegue;
 @end
 

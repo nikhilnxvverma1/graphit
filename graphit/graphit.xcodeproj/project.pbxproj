@@ -17,6 +17,7 @@
 		C4F54DC51C5B20030006224B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F54DC31C5B20030006224B /* LaunchScreen.storyboard */; };
 		C4F54DD01C5B20030006224B /* graphitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DCF1C5B20030006224B /* graphitTests.m */; };
 		C4F54DDB1C5B20030006224B /* graphitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DDA1C5B20030006224B /* graphitUITests.m */; };
+		C4F54DEA1C5B62DA0006224B /* AddPieValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DE91C5B62DA0006224B /* AddPieValueViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		C4F54DD61C5B20030006224B /* graphitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = graphitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4F54DDA1C5B20030006224B /* graphitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = graphitUITests.m; sourceTree = "<group>"; };
 		C4F54DDC1C5B20030006224B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4F54DE81C5B62DA0006224B /* AddPieValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPieValueViewController.h; sourceTree = "<group>"; };
+		C4F54DE91C5B62DA0006224B /* AddPieValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPieValueViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				C4F54DC61C5B20030006224B /* Info.plist */,
 				C4F54DB51C5B20030006224B /* graphit.xcdatamodeld */,
 				C4F54DAF1C5B20030006224B /* Supporting Files */,
+				C4F54DE81C5B62DA0006224B /* AddPieValueViewController.h */,
+				C4F54DE91C5B62DA0006224B /* AddPieValueViewController.m */,
 			);
 			path = graphit;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				C4F54DB71C5B20030006224B /* graphit.xcdatamodeld in Sources */,
 				C4F54DB41C5B20030006224B /* AppDelegate.m in Sources */,
 				C4F54DB11C5B20030006224B /* main.m in Sources */,
+				C4F54DEA1C5B62DA0006224B /* AddPieValueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = graphit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilnxvverma1.graphit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,6 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = graphit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilnxvverma1.graphit;
 				PRODUCT_NAME = "$(TARGET_NAME)";

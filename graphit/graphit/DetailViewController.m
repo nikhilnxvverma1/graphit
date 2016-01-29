@@ -43,4 +43,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"addPieValue"]) {
+            NSLog(@"Came here to add entry");
+    }
+}
+
+#pragma mark - Storyboard callbacks
+
+- (IBAction)dismiss:(UIStoryboardSegue*)unwindSegue{
+    NSLog(@"dimissing");
+}
+- (IBAction)submit:(UIStoryboardSegue*)unwindSegue{
+    NSLog(@"submittin");
+}
+
+
 @end
