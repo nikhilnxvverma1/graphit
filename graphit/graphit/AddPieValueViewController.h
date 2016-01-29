@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddPieValueViewController : UIViewController
+@interface AddPieValueViewController : UIViewController<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextField *value;
+@property (weak, nonatomic) IBOutlet UIButton *done;
 
-//- (IBAction)dismiss:(UIStoryboardSegue*)unwindSegue;
-//- (IBAction)submit:(UIStoryboardSegue*)unwindSegue;
+- (IBAction)nameDidGetEdited:(UITextField *)sender;
+
+- (IBAction)valueDidGetEdited:(UITextField *)sender;
+
 @end

@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -125,33 +126,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RvB-uf-IIA">
-                                <rect key="frame" x="56" y="42" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RvB-uf-IIA">
+                                <rect key="frame" x="0.0" y="28" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <action selector="nameDidGetEdited:" destination="fJP-Jc-XK7" eventType="editingDidEnd" id="ANG-I4-GgO"/>
+                                    <outlet property="delegate" destination="fJP-Jc-XK7" id="lzk-nJ-Hld"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ba-Hp-Jvi">
-                                <rect key="frame" x="56" y="102" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ba-Hp-Jvi">
+                                <rect key="frame" x="0.0" y="75" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="valueDidGetEdited:" destination="fJP-Jc-XK7" eventType="editingDidEnd" id="0pk-zl-SQJ"/>
+                                    <outlet property="delegate" destination="fJP-Jc-XK7" id="7Ac-aT-2fM"/>
+                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVt-QL-gR2">
-                                <rect key="frame" x="86" y="157" width="37" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVt-QL-gR2">
+                                <rect key="frame" x="452" y="545" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <segue destination="dne-GV-5do" kind="unwind" identifier="submit" unwindAction="backFromPieValue:" id="L5z-HF-H08"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yan-nO-bd4">
-                                <rect key="frame" x="80" y="195" width="48" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yan-nO-bd4">
+                                <rect key="frame" x="93" y="545" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <segue destination="dne-GV-5do" kind="unwind" identifier="cancel" unwindAction="backFromPieValue:" id="bT8-Tv-2VG"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oNK-BU-uka">
+                                <rect key="frame" x="165" y="127" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uuV-uW-dUy">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6zL-20-Rx5" customClass="ColorCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Ba-Hp-Jvi" firstAttribute="centerX" secondItem="K19-3M-4pi" secondAttribute="centerX" id="2hb-sQ-aQk"/>
+                            <constraint firstItem="RvB-uf-IIA" firstAttribute="width" secondItem="K19-3M-4pi" secondAttribute="width" id="4TP-JM-Nxh"/>
+                            <constraint firstItem="7Ba-Hp-Jvi" firstAttribute="top" secondItem="RvB-uf-IIA" secondAttribute="bottom" constant="19" id="5GM-2X-k6M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jVt-QL-gR2" secondAttribute="trailing" constant="91" id="FSB-z7-ACC"/>
+                            <constraint firstItem="RvB-uf-IIA" firstAttribute="centerX" secondItem="K19-3M-4pi" secondAttribute="centerX" id="M1K-Uu-iHl"/>
+                            <constraint firstItem="Yan-nO-bd4" firstAttribute="leading" secondItem="K19-3M-4pi" secondAttribute="leadingMargin" constant="73" id="OQj-2H-gMP"/>
+                            <constraint firstItem="Yan-nO-bd4" firstAttribute="baseline" secondItem="jVt-QL-gR2" secondAttribute="baseline" id="QHK-J6-H2M"/>
+                            <constraint firstItem="oNK-BU-uka" firstAttribute="height" secondItem="K19-3M-4pi" secondAttribute="height" multiplier="0.1" id="SQT-iW-yCm"/>
+                            <constraint firstItem="mzY-DS-oUo" firstAttribute="top" secondItem="jVt-QL-gR2" secondAttribute="bottom" constant="25" id="aAx-aK-Qbc"/>
+                            <constraint firstItem="7Ba-Hp-Jvi" firstAttribute="width" secondItem="K19-3M-4pi" secondAttribute="width" id="lBB-3b-WQf"/>
+                            <constraint firstItem="oNK-BU-uka" firstAttribute="top" secondItem="7Ba-Hp-Jvi" secondAttribute="bottom" constant="22" id="omo-PU-LdC"/>
+                            <constraint firstItem="oNK-BU-uka" firstAttribute="width" secondItem="K19-3M-4pi" secondAttribute="width" id="r9n-bo-evA"/>
+                            <constraint firstItem="RvB-uf-IIA" firstAttribute="top" secondItem="6wb-gx-98n" secondAttribute="bottom" constant="8" id="umX-rN-uvc"/>
+                            <constraint firstItem="oNK-BU-uka" firstAttribute="centerX" secondItem="K19-3M-4pi" secondAttribute="centerX" id="yqa-iA-80L"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="done" destination="jVt-QL-gR2" id="dnS-IL-oon"/>
+                        <outlet property="name" destination="RvB-uf-IIA" id="c81-bs-UpI"/>
+                        <outlet property="value" destination="7Ba-Hp-Jvi" id="4bd-Ef-YZt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEy-iU-m5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="dne-GV-5do" userLabel="Exit" sceneMemberID="exit"/>

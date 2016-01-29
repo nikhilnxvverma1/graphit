@@ -26,6 +26,7 @@
 		C4F54DFF1C5BA1FF0006224B /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DF91C5BA1FF0006224B /* SWUtilityButtonTapGestureRecognizer.m */; };
 		C4F54E001C5BA1FF0006224B /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DFB1C5BA1FF0006224B /* SWUtilityButtonView.m */; };
 		C4F54E091C5BA5410006224B /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54E081C5BA5410006224B /* NSMutableArray+SWUtilityButtons.m */; };
+		C4F54E0C1C5C225E0006224B /* ColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54E0B1C5C225E0006224B /* ColorCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		C4F54DFB1C5BA1FF0006224B /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
 		C4F54E071C5BA5410006224B /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
 		C4F54E081C5BA5410006224B /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
+		C4F54E0A1C5C225E0006224B /* ColorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCollectionViewCell.h; sourceTree = "<group>"; };
+		C4F54E0B1C5C225E0006224B /* ColorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +155,8 @@
 				C4F54DEC1C5B71BC0006224B /* PieChartView.m */,
 				C4F54DEE1C5B9B850006224B /* PieValueTableViewCell.h */,
 				C4F54DEF1C5B9B850006224B /* PieValueTableViewCell.m */,
+				C4F54E0A1C5C225E0006224B /* ColorCollectionViewCell.h */,
+				C4F54E0B1C5C225E0006224B /* ColorCollectionViewCell.m */,
 			);
 			path = graphit;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				TargetAttributes = {
 					C4F54DAB1C5B20030006224B = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = Y6J332URJM;
 					};
 					C4F54DCA1C5B20030006224B = {
 						CreatedOnToolsVersion = 7.2;
@@ -344,6 +350,7 @@
 				C4F54DED1C5B71BC0006224B /* PieChartView.m in Sources */,
 				C4F54E091C5BA5410006224B /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				C4F54DFE1C5BA1FF0006224B /* SWTableViewCell.m in Sources */,
+				C4F54E0C1C5C225E0006224B /* ColorCollectionViewCell.m in Sources */,
 				C4F54DFF1C5BA1FF0006224B /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				C4F54DEA1C5B62DA0006224B /* AddPieValueViewController.m in Sources */,
 			);
@@ -486,11 +493,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = graphit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilnxvverma1.graphit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -498,11 +508,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = graphit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilnxvverma1.graphit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
