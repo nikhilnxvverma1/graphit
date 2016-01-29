@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -33,18 +34,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2a-Vi-nqh">
-                                <rect key="frame" x="285" y="543" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2a-Vi-nqh">
+                                <rect key="frame" x="285" y="555" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <segue destination="fJP-Jc-XK7" kind="presentation" identifier="addPieValue" id="2fT-3B-ws6"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ssx-B4-WdN" customClass="PieChartView">
-                                <rect key="frame" x="39" y="108" width="505" height="212"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ssx-B4-WdN" customClass="PieChartView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="299"/>
                                 <subviews>
                                     <label clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                        <rect key="frame" x="140" y="18" width="224" height="17"/>
+                                        <rect key="frame" x="179" y="62" width="224" height="17"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" size="system"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -57,13 +58,40 @@
                                     <constraint firstItem="0XM-y9-sOw" firstAttribute="centerX" secondItem="Ssx-B4-WdN" secondAttribute="centerX" id="lJG-3q-s8b"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ppg-NK-NFA">
+                                <rect key="frame" x="0.0" y="364" width="600" height="171"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LegendCell" id="TkR-ux-ief" customClass="PieValueTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TkR-ux-ief" id="wib-Tr-7LP">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ssx-B4-WdN" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="height" multiplier="101:120" id="08j-z0-SEE"/>
+                            <constraint firstItem="A2a-Vi-nqh" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="0wC-gC-qph"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="A2a-Vi-nqh" secondAttribute="bottom" constant="20" id="8Jg-0I-T61"/>
+                            <constraint firstItem="ppg-NK-NFA" firstAttribute="height" secondItem="svH-Pt-448" secondAttribute="height" multiplier="0.3" id="9uO-MC-flk"/>
                             <constraint firstItem="Ssx-B4-WdN" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="ChB-Ri-bat"/>
-                            <constraint firstItem="Ssx-B4-WdN" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="44" id="hEC-ro-6Lp"/>
+                            <constraint firstItem="ppg-NK-NFA" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" id="UrA-kX-MdM"/>
+                            <constraint firstItem="Ssx-B4-WdN" firstAttribute="height" secondItem="svH-Pt-448" secondAttribute="height" multiplier="0.5" id="VT5-Tm-mI3"/>
+                            <constraint firstItem="Ssx-B4-WdN" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" id="XoC-0f-L8E"/>
+                            <constraint firstItem="ppg-NK-NFA" firstAttribute="top" secondItem="Ssx-B4-WdN" secondAttribute="bottom" id="epV-n1-dfD"/>
+                            <constraint firstItem="Ssx-B4-WdN" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="hEC-ro-6Lp"/>
+                            <constraint firstItem="ppg-NK-NFA" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="xIF-Ik-lNy"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="08j-z0-SEE"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="mOI-FS-AaM">
@@ -77,6 +105,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="legendTable" destination="ppg-NK-NFA" id="qvg-6s-F78"/>
                         <outlet property="pieChartView" destination="Ssx-B4-WdN" id="QMD-0n-T6I"/>
                     </connections>
                 </viewController>
@@ -110,14 +139,14 @@
                                 <rect key="frame" x="86" y="157" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <segue destination="dne-GV-5do" kind="unwind" identifier="submit" unwindAction="submit:" id="H81-yI-tyb"/>
+                                    <segue destination="dne-GV-5do" kind="unwind" identifier="submit" unwindAction="backFromPieValue:" id="L5z-HF-H08"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yan-nO-bd4">
                                 <rect key="frame" x="80" y="195" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <segue destination="dne-GV-5do" kind="unwind" identifier="dismiss" unwindAction="dismiss:" id="rnK-cN-TUl"/>
+                                    <segue destination="dne-GV-5do" kind="unwind" identifier="cancel" unwindAction="backFromPieValue:" id="bT8-Tv-2VG"/>
                                 </connections>
                             </button>
                         </subviews>

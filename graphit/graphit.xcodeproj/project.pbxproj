@@ -19,6 +19,13 @@
 		C4F54DDB1C5B20030006224B /* graphitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DDA1C5B20030006224B /* graphitUITests.m */; };
 		C4F54DEA1C5B62DA0006224B /* AddPieValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DE91C5B62DA0006224B /* AddPieValueViewController.m */; };
 		C4F54DED1C5B71BC0006224B /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DEC1C5B71BC0006224B /* PieChartView.m */; };
+		C4F54DF01C5B9B850006224B /* PieValueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DEF1C5B9B850006224B /* PieValueTableViewCell.m */; };
+		C4F54DFC1C5BA1FF0006224B /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DF31C5BA1FF0006224B /* SWCellScrollView.m */; };
+		C4F54DFD1C5BA1FF0006224B /* SWLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DF51C5BA1FF0006224B /* SWLongPressGestureRecognizer.m */; };
+		C4F54DFE1C5BA1FF0006224B /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DF71C5BA1FF0006224B /* SWTableViewCell.m */; };
+		C4F54DFF1C5BA1FF0006224B /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DF91C5BA1FF0006224B /* SWUtilityButtonTapGestureRecognizer.m */; };
+		C4F54E001C5BA1FF0006224B /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DFB1C5BA1FF0006224B /* SWUtilityButtonView.m */; };
+		C4F54E091C5BA5410006224B /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54E081C5BA5410006224B /* NSMutableArray+SWUtilityButtons.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +69,20 @@
 		C4F54DE91C5B62DA0006224B /* AddPieValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPieValueViewController.m; sourceTree = "<group>"; };
 		C4F54DEB1C5B71BC0006224B /* PieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
 		C4F54DEC1C5B71BC0006224B /* PieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartView.m; sourceTree = "<group>"; };
+		C4F54DEE1C5B9B850006224B /* PieValueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieValueTableViewCell.h; sourceTree = "<group>"; };
+		C4F54DEF1C5B9B850006224B /* PieValueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieValueTableViewCell.m; sourceTree = "<group>"; };
+		C4F54DF21C5BA1FF0006224B /* SWCellScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCellScrollView.h; sourceTree = "<group>"; };
+		C4F54DF31C5BA1FF0006224B /* SWCellScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCellScrollView.m; sourceTree = "<group>"; };
+		C4F54DF41C5BA1FF0006224B /* SWLongPressGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWLongPressGestureRecognizer.h; sourceTree = "<group>"; };
+		C4F54DF51C5BA1FF0006224B /* SWLongPressGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLongPressGestureRecognizer.m; sourceTree = "<group>"; };
+		C4F54DF61C5BA1FF0006224B /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
+		C4F54DF71C5BA1FF0006224B /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
+		C4F54DF81C5BA1FF0006224B /* SWUtilityButtonTapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonTapGestureRecognizer.h; sourceTree = "<group>"; };
+		C4F54DF91C5BA1FF0006224B /* SWUtilityButtonTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonTapGestureRecognizer.m; sourceTree = "<group>"; };
+		C4F54DFA1C5BA1FF0006224B /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
+		C4F54DFB1C5BA1FF0006224B /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
+		C4F54E071C5BA5410006224B /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
+		C4F54E081C5BA5410006224B /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +113,7 @@
 		C4F54DA31C5B20030006224B = {
 			isa = PBXGroup;
 			children = (
+				C4F54DF11C5B9FF60006224B /* SWT */,
 				C4F54DAE1C5B20030006224B /* graphit */,
 				C4F54DCE1C5B20030006224B /* graphitTests */,
 				C4F54DD91C5B20030006224B /* graphitUITests */,
@@ -128,6 +150,8 @@
 				C4F54DE91C5B62DA0006224B /* AddPieValueViewController.m */,
 				C4F54DEB1C5B71BC0006224B /* PieChartView.h */,
 				C4F54DEC1C5B71BC0006224B /* PieChartView.m */,
+				C4F54DEE1C5B9B850006224B /* PieValueTableViewCell.h */,
+				C4F54DEF1C5B9B850006224B /* PieValueTableViewCell.m */,
 			);
 			path = graphit;
 			sourceTree = "<group>";
@@ -156,6 +180,26 @@
 				C4F54DDC1C5B20030006224B /* Info.plist */,
 			);
 			path = graphitUITests;
+			sourceTree = "<group>";
+		};
+		C4F54DF11C5B9FF60006224B /* SWT */ = {
+			isa = PBXGroup;
+			children = (
+				C4F54E071C5BA5410006224B /* NSMutableArray+SWUtilityButtons.h */,
+				C4F54E081C5BA5410006224B /* NSMutableArray+SWUtilityButtons.m */,
+				C4F54DF21C5BA1FF0006224B /* SWCellScrollView.h */,
+				C4F54DF31C5BA1FF0006224B /* SWCellScrollView.m */,
+				C4F54DF41C5BA1FF0006224B /* SWLongPressGestureRecognizer.h */,
+				C4F54DF51C5BA1FF0006224B /* SWLongPressGestureRecognizer.m */,
+				C4F54DF61C5BA1FF0006224B /* SWTableViewCell.h */,
+				C4F54DF71C5BA1FF0006224B /* SWTableViewCell.m */,
+				C4F54DF81C5BA1FF0006224B /* SWUtilityButtonTapGestureRecognizer.h */,
+				C4F54DF91C5BA1FF0006224B /* SWUtilityButtonTapGestureRecognizer.m */,
+				C4F54DFA1C5BA1FF0006224B /* SWUtilityButtonView.h */,
+				C4F54DFB1C5BA1FF0006224B /* SWUtilityButtonView.m */,
+			);
+			name = SWT;
+			path = graphit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,12 +332,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F54DF01C5B9B850006224B /* PieValueTableViewCell.m in Sources */,
 				C4F54DBD1C5B20030006224B /* DetailViewController.m in Sources */,
 				C4F54DBA1C5B20030006224B /* MasterViewController.m in Sources */,
+				C4F54DFD1C5BA1FF0006224B /* SWLongPressGestureRecognizer.m in Sources */,
+				C4F54DFC1C5BA1FF0006224B /* SWCellScrollView.m in Sources */,
 				C4F54DB71C5B20030006224B /* graphit.xcdatamodeld in Sources */,
 				C4F54DB41C5B20030006224B /* AppDelegate.m in Sources */,
 				C4F54DB11C5B20030006224B /* main.m in Sources */,
+				C4F54E001C5BA1FF0006224B /* SWUtilityButtonView.m in Sources */,
 				C4F54DED1C5B71BC0006224B /* PieChartView.m in Sources */,
+				C4F54E091C5BA5410006224B /* NSMutableArray+SWUtilityButtons.m in Sources */,
+				C4F54DFE1C5BA1FF0006224B /* SWTableViewCell.m in Sources */,
+				C4F54DFF1C5BA1FF0006224B /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				C4F54DEA1C5B62DA0006224B /* AddPieValueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +573,7 @@
 				C4F54DE11C5B20030006224B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4F54DE21C5B20030006224B /* Build configuration list for PBXNativeTarget "graphitTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +582,7 @@
 				C4F54DE41C5B20030006224B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4F54DE51C5B20030006224B /* Build configuration list for PBXNativeTarget "graphitUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +591,7 @@
 				C4F54DE71C5B20030006224B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
