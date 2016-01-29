@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PieChartView.h"
 
 @interface DetailViewController : UIViewController
 
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet PieChartView *pieChartView;
 
 - (IBAction)dismiss:(UIStoryboardSegue*)unwindSegue;
 - (IBAction)submit:(UIStoryboardSegue*)unwindSegue;

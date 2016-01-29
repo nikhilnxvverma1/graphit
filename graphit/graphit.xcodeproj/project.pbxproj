@@ -18,6 +18,7 @@
 		C4F54DD01C5B20030006224B /* graphitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DCF1C5B20030006224B /* graphitTests.m */; };
 		C4F54DDB1C5B20030006224B /* graphitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DDA1C5B20030006224B /* graphitUITests.m */; };
 		C4F54DEA1C5B62DA0006224B /* AddPieValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DE91C5B62DA0006224B /* AddPieValueViewController.m */; };
+		C4F54DED1C5B71BC0006224B /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DEC1C5B71BC0006224B /* PieChartView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		C4F54DDC1C5B20030006224B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4F54DE81C5B62DA0006224B /* AddPieValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPieValueViewController.h; sourceTree = "<group>"; };
 		C4F54DE91C5B62DA0006224B /* AddPieValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPieValueViewController.m; sourceTree = "<group>"; };
+		C4F54DEB1C5B71BC0006224B /* PieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
+		C4F54DEC1C5B71BC0006224B /* PieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				C4F54DAF1C5B20030006224B /* Supporting Files */,
 				C4F54DE81C5B62DA0006224B /* AddPieValueViewController.h */,
 				C4F54DE91C5B62DA0006224B /* AddPieValueViewController.m */,
+				C4F54DEB1C5B71BC0006224B /* PieChartView.h */,
+				C4F54DEC1C5B71BC0006224B /* PieChartView.m */,
 			);
 			path = graphit;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				C4F54DB71C5B20030006224B /* graphit.xcdatamodeld in Sources */,
 				C4F54DB41C5B20030006224B /* AppDelegate.m in Sources */,
 				C4F54DB11C5B20030006224B /* main.m in Sources */,
+				C4F54DED1C5B71BC0006224B /* PieChartView.m in Sources */,
 				C4F54DEA1C5B62DA0006224B /* AddPieValueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
