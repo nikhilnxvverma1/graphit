@@ -1,5 +1,5 @@
 //
-//  Color+CoreDataProperties.h
+//  PieValue+CoreDataProperties.h
 //  graphit
 //
 //  Created by Nikhil Verma on 30/01/16.
@@ -9,16 +9,16 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Color.h"
+#import "PieValue.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Color (CoreDataProperties)
+@interface PieValue (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *alpha;
-@property (nullable, nonatomic, retain) NSNumber *blue;
-@property (nullable, nonatomic, retain) NSNumber *green;
-@property (nullable, nonatomic, retain) NSNumber *red;
+@property (nullable, nonatomic, retain) NSDate *timestamp;
+@property (nullable, nonatomic, retain) NSNumber *value;
+@property (nullable, nonatomic, retain) Legend *legend;
+@property (nullable, nonatomic, retain) PieChart *pieChart;
 
 @end
 

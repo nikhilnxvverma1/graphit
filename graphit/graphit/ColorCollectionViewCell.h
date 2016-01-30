@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Color.h"
+#import "UtilColor.h"
 @interface ColorCollectionViewCell : UICollectionViewCell
-//These rgb values are between 0 to 1
-@property (nonatomic) CGFloat r;
-@property (nonatomic) CGFloat g;
-@property (nonatomic) CGFloat b;
-
+@property (nonatomic) UtilColor* utilColor;
+//The color model should not be changed internally by this class
+@property (strong,nonatomic) Color *colorModel;
+-(id)initWithColor:(CGFloat)r :(CGFloat)g :(CGFloat)b;
 @end

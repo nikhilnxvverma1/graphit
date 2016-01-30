@@ -1,5 +1,5 @@
 //
-//  Color.h
+//  PieValue.h
 //  graphit
 //
 //  Created by Nikhil Verma on 30/01/16.
@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Legend, PieChart;
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Color : NSManagedObject
+@interface PieValue : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
 
@@ -19,4 +21,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#import "Color+CoreDataProperties.h"
+#import "PieValue+CoreDataProperties.h"

@@ -8,6 +8,8 @@
 
 #import "DetailViewController.h"
 #import "PieValueTableViewCell.h"
+#import "AppDelegate.h"
+#import "AddPieValueViewController.h"
 
 @interface DetailViewController ()
 
@@ -17,7 +19,7 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem {
+- (void)setDetailItem:(PieChart*)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
             
@@ -29,7 +31,7 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = @"Pie Value: 37";//[[self.detailItem valueForKey:@"timeStamp"] description];
+        self.header.text =[self.detailItem valueForKey:@"title"];
     }
 }
 
@@ -40,6 +42,10 @@
     self.pieChartView.pieValueDescription=self.detailDescriptionLabel;
     self.legendTable.delegate=self;
     self.legendTable.dataSource=self;
+//    self.header.delegate=self;
+    [self.header addTarget:self
+                    action:@selector(dismissKeyboard:)
+          forControlEvents:UIControlEventEditingDidEndOnExit];
 
 }
 
@@ -58,8 +64,40 @@
 
 #pragma mark - Callback for add pie value
 
+-(void)dismissKeyboard:(UITextField*)textfield{
+    [textfield resignFirstResponder];
+}
+
+- (IBAction)didEditHeader:(UITextField *)sender {
+
+    AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
+    [self.detailItem setValue:sender.text forKey:@"title"];
+    [delegate saveContext];
+}
+
 -(void)backFromPieValue:(UIStoryboardSegue*)segue{
-    NSLog(@"segue id: %@",segue.identifier);
+    if ([[segue identifier] isEqualToString:@"submit"]) {
+        AddPieValueViewController* entry=(AddPieValueViewController*)segue.destinationViewController;
+        NSString *name=entry.name.text;
+        NSNumber *value=[NSNumber numberWithDouble:[entry.value.text doubleValue]];
+        Color *color=entry.selectedColor;
+        
+        AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
+        NSManagedObject *legend = [NSEntityDescription insertNewObjectForEntityForName:@"Legend" inManagedObjectContext:delegate.managedObjectContext];
+        NSManagedObject *pieValue = [NSEntityDescription insertNewObjectForEntityForName:@"PieValue" inManagedObjectContext:delegate.managedObjectContext];
+        
+        
+        [legend setValue:name forKey:@"name"];
+        [legend setValue:color forKey:@"legendColor"];
+        
+        [pieValue setValue:value forKey:@"value"];
+        [pieValue setValue:[NSDate date] forKey:@"timestamp"];
+        [pieValue setValue:legend forKey:@"legend"];
+        [pieValue setValue:self.detailItem forKey:@"pieChart"];
+        
+        [delegate saveContext];
+    }
+    
 }
 
 #pragma mark - Legend table management

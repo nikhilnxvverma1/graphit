@@ -1,8 +1,8 @@
 //
-//  Color.h
+//  Axis.h
 //  graphit
 //
-//  Created by Nikhil Verma on 30/01/16.
+//  Created by Nikhil Verma on 29/01/16.
 //  Copyright © 2016 Nikhil Verma. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Color : NSManagedObject
+@interface Axis : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
 
@@ -19,4 +19,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#import "Color+CoreDataProperties.h"
+#import "Axis+CoreDataProperties.h"

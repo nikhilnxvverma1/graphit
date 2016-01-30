@@ -23,6 +23,7 @@
 @synthesize activeField;
 @synthesize nextButton;
 @synthesize prevButton;
+@synthesize selectedColor;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -125,11 +126,8 @@
     static NSString *MyIdentifier = @"ColorCell";
     ColorCollectionViewCell *cell = (ColorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:MyIdentifier forIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[ColorCollectionViewCell alloc] init];
+        cell = [[ColorCollectionViewCell alloc] initWithColor:0.4 :0.2 :0.5];
     }
-    cell.r=0.5;
-    cell.g=0.3;
-    cell.b=0.8;
 //    cell.delegate=self;
     return cell;
 }

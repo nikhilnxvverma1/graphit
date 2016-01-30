@@ -1,5 +1,5 @@
 //
-//  Color+CoreDataProperties.m
+//  PieValue+CoreDataProperties.m
 //  graphit
 //
 //  Created by Nikhil Verma on 30/01/16.
@@ -9,13 +9,13 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Color+CoreDataProperties.h"
+#import "PieValue+CoreDataProperties.h"
 
-@implementation Color (CoreDataProperties)
+@implementation PieValue (CoreDataProperties)
 
-@dynamic alpha;
-@dynamic blue;
-@dynamic green;
-@dynamic red;
+@dynamic timestamp;
+@dynamic value;
+@dynamic legend;
+@dynamic pieChart;
 
 @end

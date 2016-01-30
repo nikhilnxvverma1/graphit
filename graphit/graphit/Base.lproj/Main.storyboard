@@ -101,11 +101,15 @@
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            <connections>
+                                <action selector="didEditHeader:" destination="JEX-9P-axG" eventType="editingDidEnd" id="4se-Pj-vSO"/>
+                            </connections>
                         </textField>
                     </navigationItem>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="header" destination="qKv-cu-mDJ" id="ndN-zW-lrE"/>
                         <outlet property="legendTable" destination="ppg-NK-NFA" id="qvg-6s-F78"/>
                         <outlet property="pieChartView" destination="Ssx-B4-WdN" id="QMD-0n-T6I"/>
                     </connections>

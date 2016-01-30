@@ -1,14 +1,15 @@
 //
-//  Color.m
+//  PieChart.m
 //  graphit
 //
-//  Created by Nikhil Verma on 30/01/16.
+//  Created by Nikhil Verma on 29/01/16.
 //  Copyright © 2016 Nikhil Verma. All rights reserved.
 //
 
-#import "Color.h"
+#import "PieChart.h"
+#import "PieValue.h"
 
-@implementation Color
+@implementation PieChart
 
 // Insert code here to add functionality to your managed object subclass
 

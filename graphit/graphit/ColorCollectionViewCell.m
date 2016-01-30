@@ -9,9 +9,14 @@
 #import "ColorCollectionViewCell.h"
 
 @implementation ColorCollectionViewCell
-@synthesize r;
-@synthesize g;
-@synthesize b;
+@synthesize utilColor;
+
+-(id)initWithColor:(CGFloat)r :(CGFloat)g :(CGFloat)b{
+    if(self=[super init]){
+        utilColor=[[UtilColor alloc] initWithRed:r green:g blue:b];
+    }
+    return self;
+}
 
 -(void)drawRect:(CGRect)rect{
     // Drawing code
@@ -26,7 +31,7 @@
     
     CGContextSetLineWidth(ctx,5);
 //    CGContextSetRGBStrokeColor(ctx,0.8,0.8,0.8,1);
-    CGContextSetRGBFillColor(ctx,r,g,b,1);
+    CGContextSetRGBFillColor(ctx,utilColor.r,utilColor.g,utilColor.b,1);
     CGContextAddArc(ctx,center.x,center.y,radius,0.0,M_PI*2,YES);
     //    CGContextStrokePath(ctx);//only one happens at a time,so use drawPath instead
 //    CGContextDrawPath(ctx, kCGPathFill);

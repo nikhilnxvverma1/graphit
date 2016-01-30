@@ -1,14 +1,15 @@
 //
-//  Color.m
+//  DataPoint.m
 //  graphit
 //
-//  Created by Nikhil Verma on 30/01/16.
+//  Created by Nikhil Verma on 29/01/16.
 //  Copyright © 2016 Nikhil Verma. All rights reserved.
 //
 
-#import "Color.h"
+#import "DataPoint.h"
+#import "Graph.h"
 
-@implementation Color
+@implementation DataPoint
 
 // Insert code here to add functionality to your managed object subclass
 
