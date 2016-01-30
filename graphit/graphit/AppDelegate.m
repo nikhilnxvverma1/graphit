@@ -92,7 +92,6 @@
         NSLog(@"Error reading plist: %@, format: %lu", strerrorDesc, (unsigned long)plistFormat);
         abort();
     } else {
-        NSLog(@"temp.count %lu",(unsigned long)[temp count]);
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         [request setEntity:[NSEntityDescription entityForName:@"Color" inManagedObjectContext:self.managedObjectContext]];
         

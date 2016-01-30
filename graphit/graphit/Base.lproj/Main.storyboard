@@ -121,7 +121,7 @@
         <!--Add Pie Value View Controller-->
         <scene sceneID="Mv2-41-pR0">
             <objects>
-                <viewController id="fJP-Jc-XK7" customClass="AddPieValueViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PieValueEntry" id="fJP-Jc-XK7" customClass="AddPieValueViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6wb-gx-98n"/>
                         <viewControllerLayoutGuide type="bottom" id="mzY-DS-oUo"/>

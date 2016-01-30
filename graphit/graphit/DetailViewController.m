@@ -10,6 +10,8 @@
 #import "PieValueTableViewCell.h"
 #import "AppDelegate.h"
 #import "AddPieValueViewController.h"
+#import "PieValue.h"
+#import "Legend.h"
 
 @interface DetailViewController ()
 
@@ -56,28 +58,31 @@
 
 #pragma mark - Segues
 
+- (void)configurePieValueScreen:(AddPieValueViewController*)addPie editExitingEntry:(BOOL)edit{
+    //get a list of colors
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Color" inManagedObjectContext:delegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error = nil;
+    NSArray *allColors = [delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (error) {
+        NSLog(@"Unable to execute fetch request.");
+        NSLog(@"%@, %@", error, error.localizedDescription);
+        
+    } else {
+        //TODO filter out colors that are already used up
+        addPie.colors=allColors;
+        addPie.editEntry=edit;
+    }
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"addPieValue"]) {
-        //get a list of colors
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        
-        AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Color" inManagedObjectContext:delegate.managedObjectContext];
-        [fetchRequest setEntity:entity];
-        
-        NSError *error = nil;
-        NSArray *allColors = [delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-        
-        if (error) {
-            NSLog(@"Unable to execute fetch request.");
-            NSLog(@"%@, %@", error, error.localizedDescription);
-            
-        } else {
-            NSLog(@"%@", allColors);
-            AddPieValueViewController *addPie= (AddPieValueViewController*)segue.destinationViewController;
-            //TODO filter out colors that are already used up
-            addPie.colors=allColors;
-        }
+        [self configurePieValueScreen:(AddPieValueViewController*)segue.destinationViewController editExitingEntry:NO];
         
     }
 }
@@ -103,8 +108,16 @@
         Color *color=entry.selectedColor;
         
         AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
-        NSManagedObject *legend = [NSEntityDescription insertNewObjectForEntityForName:@"Legend" inManagedObjectContext:delegate.managedObjectContext];
-        NSManagedObject *pieValue = [NSEntityDescription insertNewObjectForEntityForName:@"PieValue" inManagedObjectContext:delegate.managedObjectContext];
+        NSManagedObject *legend;
+        NSManagedObject *pieValue;
+        
+        if(entry.editEntry){
+            pieValue=entry.entryToUpdate;
+            legend=entry.entryToUpdate.legend;
+        }else{
+            legend = [NSEntityDescription insertNewObjectForEntityForName:@"Legend" inManagedObjectContext:delegate.managedObjectContext];
+            pieValue = [NSEntityDescription insertNewObjectForEntityForName:@"PieValue" inManagedObjectContext:delegate.managedObjectContext];
+        }
         
         
         [legend setValue:name forKey:@"name"];
@@ -123,16 +136,15 @@
 #pragma mark - Legend table management
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;//TODO add button in second section?
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Number of rows is the number of time zones in the region for the specified section.
-    return 4;
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    return [sectionInfo numberOfObjects];
 }
 
-- (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"cell selected at path %@",indexPath);
 }
 
@@ -142,11 +154,22 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (cell == nil) {
         cell = [[PieValueTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
     }
-    cell.textLabel.text = @"Color";
-    cell.rightUtilityButtons=[self editingOptions];
-    cell.delegate=self;
+    [self configureCell:cell atIndexPath:indexPath];
+    
     return cell;
 }
+
+- (void)configureCell:(PieValueTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    PieValue *object = (PieValue*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+//    cell.textLabel.text = [[object valueForKey:@"legend.name"] description];
+    cell.textLabel.text = object.legend.name;
+//    cell.textLabel.text = @"Color";
+    cell.rightUtilityButtons=[self editingOptions];
+    cell.delegate=self;
+
+}
+
+#pragma mark - Slider buttons
 
 -(NSArray *) editingOptions{
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
@@ -174,10 +197,30 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
 // click event on right utility button
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index{
+    
+    //important: index refers to index of the button on the left side from the slider drawer
+    NSIndexPath *indexPath=[self.legendTable indexPathForCell:cell];
+    PieValue *object = (PieValue*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     if(index==0) {
-        NSLog(@"Handle edit");
+
+        NSString * storyboardName = @"Main";
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+        AddPieValueViewController * editPieValue = (AddPieValueViewController*)[storyboard instantiateViewControllerWithIdentifier:@"PieValueEntry"];
+
+        [self configurePieValueScreen:editPieValue editExitingEntry:YES];
+        [self presentViewController:editPieValue animated:YES completion:nil];
+        
+        //views are nil untill we call presentViewController
+        editPieValue.entryToUpdate=object;
+        editPieValue.editEntry=YES;
+        editPieValue.name.text=object.legend.name;
+        editPieValue.value.text=[object.value stringValue];
+        editPieValue.selectedColor=object.legend.legendColor;
+        [editPieValue.done setEnabled:[editPieValue validInput]];
     }else{
         NSLog(@"Handle delete");
+        AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
+        [delegate.managedObjectContext deleteObject:object];
     }
 }
 
@@ -195,5 +238,98 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 - (BOOL)swipeableTableViewCell:(SWTableViewCell *)cell canSwipeToState:(SWCellState)state{
     return YES;
 }
+
+#pragma mark - Fetched results controller
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"PieValue" inManagedObjectContext:delegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:NO];
+    
+    [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:delegate.managedObjectContext sectionNameKeyPath:nil cacheName:@"PieValues"];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return _fetchedResultsController;
+}
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.legendTable beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+{
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.legendTable insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.legendTable deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        default:
+            return;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath
+{
+    UITableView *tableView = self.legendTable;
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.legendTable insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.legendTable deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [self.legendTable deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.legendTable insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.legendTable endUpdates];
+}
+
+
 
 @end

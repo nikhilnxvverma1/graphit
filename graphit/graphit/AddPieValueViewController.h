@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Color.h"
+#import "PieValue.h"
 @interface AddPieValueViewController : UIViewController<UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *value;
@@ -16,8 +17,11 @@
 @property (weak, nonatomic) IBOutlet UIView *legendBox;
 @property (strong,nonatomic) Color *selectedColor;
 @property (strong,nonatomic) NSArray *colors;
+@property BOOL editEntry;
+//only keep a reference to the entry that we need to update.N.A if this is a new entry
+@property (strong,nonatomic) PieValue *entryToUpdate;
 - (IBAction)nameDidGetEdited:(UITextField *)sender;
 
 - (IBAction)valueDidGetEdited:(UITextField *)sender;
-
+-(BOOL)validInput;
 @end

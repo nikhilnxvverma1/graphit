@@ -33,6 +33,7 @@
     self.colorPicker.allowsSelection=YES;
     self.colorPicker.allowsMultipleSelection=NO;
     self.selectedColor=colors[0];
+    [self.done setEnabled:[self validInput]];
     
 }
 
