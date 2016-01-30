@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *value;
 @property (weak, nonatomic) IBOutlet UIButton *done;
 @property (weak, nonatomic) IBOutlet UICollectionView *colorPicker;
+@property (weak, nonatomic) IBOutlet UIView *legendBox;
 @property (strong,nonatomic,readonly) Color *selectedColor;
 
 - (IBAction)nameDidGetEdited:(UITextField *)sender;

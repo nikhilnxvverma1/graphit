@@ -50,6 +50,7 @@
 		C4F54EE31C5C86EA0006224B /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54EE11C5C86EA0006224B /* Color.m */; };
 		C4F54EEE1C5C8BCE0006224B /* PieValue+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54EEB1C5C8BCD0006224B /* PieValue+CoreDataProperties.m */; };
 		C4F54EEF1C5C8BCE0006224B /* PieValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54EED1C5C8BCD0006224B /* PieValue.m */; };
+		C4F54EF11C5CF5660006224B /* ColorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4F54EF01C5CF5660006224B /* ColorList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		C4F54EEB1C5C8BCD0006224B /* PieValue+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PieValue+CoreDataProperties.m"; sourceTree = "<group>"; };
 		C4F54EEC1C5C8BCD0006224B /* PieValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieValue.h; sourceTree = "<group>"; };
 		C4F54EED1C5C8BCD0006224B /* PieValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieValue.m; sourceTree = "<group>"; };
+		C4F54EF01C5CF5660006224B /* ColorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				C4F54DEF1C5B9B850006224B /* PieValueTableViewCell.m */,
 				C4F54E0A1C5C225E0006224B /* ColorCollectionViewCell.h */,
 				C4F54E0B1C5C225E0006224B /* ColorCollectionViewCell.m */,
+				C4F54EF01C5CF5660006224B /* ColorList.plist */,
 			);
 			path = graphit;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F54EF11C5CF5660006224B /* ColorList.plist in Resources */,
 				C4F54DC51C5B20030006224B /* LaunchScreen.storyboard in Resources */,
 				C4F54DC21C5B20030006224B /* Assets.xcassets in Resources */,
 				C4F54DC01C5B20030006224B /* Main.storyboard in Resources */,

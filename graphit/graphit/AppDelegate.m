@@ -19,6 +19,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //database setup on first launch if needed
+    [self populateColorTableIfNeeded];
+    
+    //first time launch TODO trigger tutorial
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]){
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
@@ -27,6 +37,7 @@
     UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
     MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+
     return YES;
 }
 
@@ -62,6 +73,59 @@
         return YES;
     } else {
         return NO;
+    }
+}
+
+#pragma mark - First launch setup
+
+-(void) populateColorTableIfNeeded{
+    //read the plist file
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"ColorList" ofType:@"plist"];
+    
+    // read property list into memory as an NSData  object
+    NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
+    NSString *strerrorDesc = nil;
+    NSPropertyListFormat plistFormat;
+    // convert static property list into dictionary object
+    NSArray *temp = (NSArray *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&plistFormat errorDescription:&strerrorDesc];
+    if (!temp) {
+        NSLog(@"Error reading plist: %@, format: %lu", strerrorDesc, (unsigned long)plistFormat);
+        abort();
+    } else {
+        NSLog(@"temp.count %lu",(unsigned long)[temp count]);
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        [request setEntity:[NSEntityDescription entityForName:@"Color" inManagedObjectContext:self.managedObjectContext]];
+        
+        [request setIncludesSubentities:NO]; //Omit subentities. Default is YES (i.e. include subentities)
+        
+        NSError *err;
+        NSUInteger count = [self.managedObjectContext countForFetchRequest:request error:&err];
+        NSLog(@"Count of colors in DB %lu",(unsigned long)count);
+        if(count == NSNotFound) {
+            //Handle error
+            abort();
+        }else if(count!=temp.count){
+            //remove all existing records first
+            NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Color"];
+            NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
+            
+            NSError *deleteError = nil;
+            [self.persistentStoreCoordinator executeRequest:delete withContext:self.managedObjectContext error:&deleteError];
+            
+            //populate those many items from plist in the database
+            for(NSArray *colorParts in temp){
+                NSManagedObject *color = [NSEntityDescription insertNewObjectForEntityForName:@"Color" inManagedObjectContext:self.managedObjectContext];
+                
+                // If appropriate, configure the new managed object.
+                // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+                
+                [color setValue:colorParts[0] forKey:@"red"];
+                [color setValue:colorParts[1] forKey:@"green"];
+                [color setValue:colorParts[2] forKey:@"blue"];
+                [color setValue:colorParts[3] forKey:@"alpha"];
+            }
+            [self saveContext];
+        }
     }
 }
 
