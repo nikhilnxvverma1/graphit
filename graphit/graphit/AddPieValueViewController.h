@@ -14,8 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *done;
 @property (weak, nonatomic) IBOutlet UICollectionView *colorPicker;
 @property (weak, nonatomic) IBOutlet UIView *legendBox;
-@property (strong,nonatomic,readonly) Color *selectedColor;
-
+@property (strong,nonatomic) Color *selectedColor;
+@property (strong,nonatomic) NSArray *colors;
 - (IBAction)nameDidGetEdited:(UITextField *)sender;
 
 - (IBAction)valueDidGetEdited:(UITextField *)sender;

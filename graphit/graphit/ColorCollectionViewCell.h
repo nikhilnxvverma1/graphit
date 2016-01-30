@@ -13,5 +13,5 @@
 @property (nonatomic) UtilColor* utilColor;
 //The color model should not be changed internally by this class
 @property (strong,nonatomic) Color *colorModel;
--(id)initWithColor:(CGFloat)r :(CGFloat)g :(CGFloat)b;
+
 @end

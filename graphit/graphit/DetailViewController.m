@@ -58,7 +58,27 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"addPieValue"]) {
-            NSLog(@"Came here to add entry");
+        //get a list of colors
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        
+        AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Color" inManagedObjectContext:delegate.managedObjectContext];
+        [fetchRequest setEntity:entity];
+        
+        NSError *error = nil;
+        NSArray *allColors = [delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        
+        if (error) {
+            NSLog(@"Unable to execute fetch request.");
+            NSLog(@"%@, %@", error, error.localizedDescription);
+            
+        } else {
+            NSLog(@"%@", allColors);
+            AddPieValueViewController *addPie= (AddPieValueViewController*)segue.destinationViewController;
+            //TODO filter out colors that are already used up
+            addPie.colors=allColors;
+        }
+        
     }
 }
 
@@ -77,7 +97,7 @@
 
 -(void)backFromPieValue:(UIStoryboardSegue*)segue{
     if ([[segue identifier] isEqualToString:@"submit"]) {
-        AddPieValueViewController* entry=(AddPieValueViewController*)segue.destinationViewController;
+        AddPieValueViewController* entry=(AddPieValueViewController*)segue.sourceViewController;
         NSString *name=entry.name.text;
         NSNumber *value=[NSNumber numberWithDouble:[entry.value.text doubleValue]];
         Color *color=entry.selectedColor;

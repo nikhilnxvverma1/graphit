@@ -11,9 +11,27 @@
 @implementation ColorCollectionViewCell
 @synthesize utilColor;
 
--(id)initWithColor:(CGFloat)r :(CGFloat)g :(CGFloat)b{
+-(void)initView{
+    utilColor=[[UtilColor alloc] initWithRed:0.0 green:1 blue:1];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    if (self=[super initWithCoder:aDecoder]) {
+        [self initView];
+    }
+    return self;
+}
+
+-(id)initWithFrame:(CGRect)frame{
+    if (self=[super initWithFrame:frame]) {
+        [self initView];
+    }
+    return self;
+}
+
+-(id)init{
     if(self=[super init]){
-        utilColor=[[UtilColor alloc] initWithRed:r green:g blue:b];
+        [self initView];
     }
     return self;
 }
@@ -36,23 +54,22 @@
     //    CGContextStrokePath(ctx);//only one happens at a time,so use drawPath instead
 //    CGContextDrawPath(ctx, kCGPathFill);
         CGContextFillPath(ctx);
-    
-//    if(self.manualSelection){
-//        NSLog(@"Drawing highlight");
-//        CGFloat radius=bounds.size.height/3;
-//        CGContextSaveGState(ctx);
-//        
-//        CGContextSetLineWidth(ctx,5);
-//        //    CGContextSetRGBStrokeColor(ctx,0.8,0.8,0.8,1);
-//        CGContextSetRGBFillColor(ctx,1,1,1,1);
-//        CGContextAddArc(ctx,center.x,center.y,radius+radius*0.1,0.0,M_PI*2,YES);
-//        //    CGContextStrokePath(ctx);//only one happens at a time,so use drawPath instead
-//        CGContextDrawPath(ctx, kCGPathFill);
-//    }
 }
 
 -(void)prepareForReuse{
     self.backgroundColor=[UIColor clearColor];
+}
+
+
+-(void)setColorModel:(Color *)colorModel{
+    _colorModel=colorModel;
+    [self setRed:colorModel.red green:colorModel.green blue:colorModel.blue];
+}
+
+-(void)setRed:(NSNumber*)red green:(NSNumber*)green blue:(NSNumber*)blue{
+    utilColor.r=[red floatValue];
+    utilColor.g=[green floatValue];
+    utilColor.b=[blue floatValue];
 }
 
 @end

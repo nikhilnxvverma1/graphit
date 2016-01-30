@@ -23,7 +23,7 @@
 @synthesize activeField;
 @synthesize nextButton;
 @synthesize prevButton;
-@synthesize selectedColor;
+@synthesize colors;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +32,8 @@
     self.colorPicker.dataSource=self;
     self.colorPicker.allowsSelection=YES;
     self.colorPicker.allowsMultipleSelection=NO;
+    self.selectedColor=colors[0];
+    
 }
 
 #pragma mark - Segues
@@ -118,7 +120,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section{
-    return 15;
+    return colors.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -126,40 +128,22 @@
     static NSString *MyIdentifier = @"ColorCell";
     ColorCollectionViewCell *cell = (ColorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:MyIdentifier forIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[ColorCollectionViewCell alloc] initWithColor:0.4 :0.2 :0.5];
+        cell = [[ColorCollectionViewCell alloc] init];
     }
-//    cell.delegate=self;
+    Color *color=colors[indexPath.row];
+    cell.colorModel=color;
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView
-didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     ColorCollectionViewCell *cell=(ColorCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:153/255.0 alpha:1];
-//
-//    NSLog(@"Cell did get selected %@",indexPath);
-//    [cell setNeedsDisplay];
-//    cell.manualSelection=YES;
-    cell.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:153/255.0 alpha:1];
+    self.selectedColor=cell.colorModel;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView
-didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
-    ColorCollectionViewCell *cell=(ColorCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor clearColor];
-
-//    [cell setNeedsDisplay];
-//    cell.manualSelection=NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
-        ColorCollectionViewCell *cell=(ColorCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-        [cell setNeedsDisplay];
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath{
-        ColorCollectionViewCell *cell=(ColorCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-        [cell setNeedsDisplay];
+-(void)setSelectedColor:(Color *)color{
+    _selectedColor=color;
+    //update the legend box
+    self.legendBox.backgroundColor=[[UIColor alloc] initWithRed:[color.red floatValue] green:[color.green floatValue]  blue:[color.blue floatValue] alpha:1];
 }
 
 @end
