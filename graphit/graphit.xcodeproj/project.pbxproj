@@ -27,6 +27,8 @@
 		C4F54E001C5BA1FF0006224B /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54DFB1C5BA1FF0006224B /* SWUtilityButtonView.m */; };
 		C4F54E091C5BA5410006224B /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54E081C5BA5410006224B /* NSMutableArray+SWUtilityButtons.m */; };
 		C4F54E0C1C5C225E0006224B /* ColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54E0B1C5C225E0006224B /* ColorCollectionViewCell.m */; };
+		C4F54E531C5C24510006224B /* Color+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54E501C5C24510006224B /* Color+CoreDataProperties.m */; };
+		C4F54E541C5C24510006224B /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54E521C5C24510006224B /* Color.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,10 @@
 		C4F54E081C5BA5410006224B /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
 		C4F54E0A1C5C225E0006224B /* ColorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCollectionViewCell.h; sourceTree = "<group>"; };
 		C4F54E0B1C5C225E0006224B /* ColorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorCollectionViewCell.m; sourceTree = "<group>"; };
+		C4F54E4F1C5C24510006224B /* Color+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Color+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C4F54E501C5C24510006224B /* Color+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Color+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C4F54E511C5C24510006224B /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		C4F54E521C5C24510006224B /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,10 @@
 				C4F54DEF1C5B9B850006224B /* PieValueTableViewCell.m */,
 				C4F54E0A1C5C225E0006224B /* ColorCollectionViewCell.h */,
 				C4F54E0B1C5C225E0006224B /* ColorCollectionViewCell.m */,
+				C4F54E4F1C5C24510006224B /* Color+CoreDataProperties.h */,
+				C4F54E501C5C24510006224B /* Color+CoreDataProperties.m */,
+				C4F54E511C5C24510006224B /* Color.h */,
+				C4F54E521C5C24510006224B /* Color.m */,
 			);
 			path = graphit;
 			sourceTree = "<group>";
@@ -341,6 +351,7 @@
 				C4F54DF01C5B9B850006224B /* PieValueTableViewCell.m in Sources */,
 				C4F54DBD1C5B20030006224B /* DetailViewController.m in Sources */,
 				C4F54DBA1C5B20030006224B /* MasterViewController.m in Sources */,
+				C4F54E541C5C24510006224B /* Color.m in Sources */,
 				C4F54DFD1C5BA1FF0006224B /* SWLongPressGestureRecognizer.m in Sources */,
 				C4F54DFC1C5BA1FF0006224B /* SWCellScrollView.m in Sources */,
 				C4F54DB71C5B20030006224B /* graphit.xcdatamodeld in Sources */,
@@ -353,6 +364,7 @@
 				C4F54E0C1C5C225E0006224B /* ColorCollectionViewCell.m in Sources */,
 				C4F54DFF1C5BA1FF0006224B /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				C4F54DEA1C5B62DA0006224B /* AddPieValueViewController.m in Sources */,
+				C4F54E531C5C24510006224B /* Color+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

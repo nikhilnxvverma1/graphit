@@ -9,6 +9,9 @@
 #import "ColorCollectionViewCell.h"
 
 @implementation ColorCollectionViewCell
+@synthesize r;
+@synthesize g;
+@synthesize b;
 
 -(void)drawRect:(CGRect)rect{
     // Drawing code
@@ -22,12 +25,29 @@
     CGContextSaveGState(ctx);
     
     CGContextSetLineWidth(ctx,5);
-    CGContextSetRGBStrokeColor(ctx,0.8,0.8,0.8,1);
-    CGContextSetRGBFillColor(ctx,1.00,0.86,0.01,1);
+//    CGContextSetRGBStrokeColor(ctx,0.8,0.8,0.8,1);
+    CGContextSetRGBFillColor(ctx,r,g,b,1);
     CGContextAddArc(ctx,center.x,center.y,radius,0.0,M_PI*2,YES);
     //    CGContextStrokePath(ctx);//only one happens at a time,so use drawPath instead
-    CGContextDrawPath(ctx, kCGPathFill);
-    //    CGContextFillPath(ctx);
+//    CGContextDrawPath(ctx, kCGPathFill);
+        CGContextFillPath(ctx);
+    
+//    if(self.manualSelection){
+//        NSLog(@"Drawing highlight");
+//        CGFloat radius=bounds.size.height/3;
+//        CGContextSaveGState(ctx);
+//        
+//        CGContextSetLineWidth(ctx,5);
+//        //    CGContextSetRGBStrokeColor(ctx,0.8,0.8,0.8,1);
+//        CGContextSetRGBFillColor(ctx,1,1,1,1);
+//        CGContextAddArc(ctx,center.x,center.y,radius+radius*0.1,0.0,M_PI*2,YES);
+//        //    CGContextStrokePath(ctx);//only one happens at a time,so use drawPath instead
+//        CGContextDrawPath(ctx, kCGPathFill);
+//    }
+}
+
+-(void)prepareForReuse{
+    self.backgroundColor=[UIColor clearColor];
 }
 
 @end

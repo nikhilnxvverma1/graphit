@@ -7,6 +7,7 @@
 //
 
 #import "AddPieValueViewController.h"
+#import "ColorCollectionViewCell.h"
 
 @interface AddPieValueViewController ()
 @property (strong,nonatomic) UITextField *activeField;
@@ -26,16 +27,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    UIToolbar *keyboardToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44)];
-    
-    
-    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard)];
-    
-    [keyboardToolbar setItems:[NSArray arrayWithObjects:flexibleSpace, doneButton, nil]];
-//    [keyboardToolbar addSubview:segmentedControl];
-    [self.name setInputAccessoryView:keyboardToolbar];
+    self.colorPicker.delegate=self;
+    self.colorPicker.dataSource=self;
+    self.colorPicker.allowsSelection=YES;
+    self.colorPicker.allowsMultipleSelection=NO;
 }
 
 #pragma mark - Segues
@@ -116,6 +111,57 @@
 
 - (IBAction)valueDidGetEdited:(UITextField *)sender {
     [self.done setEnabled:[self validInput]];
+}
+
+#pragma mark - Color picker
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section{
+    return 15;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *MyIdentifier = @"ColorCell";
+    ColorCollectionViewCell *cell = (ColorCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:MyIdentifier forIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[ColorCollectionViewCell alloc] init];
+    }
+    cell.r=0.5;
+    cell.g=0.3;
+    cell.b=0.8;
+//    cell.delegate=self;
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView
+didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    ColorCollectionViewCell *cell=(ColorCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:153/255.0 alpha:1];
+//
+//    NSLog(@"Cell did get selected %@",indexPath);
+//    [cell setNeedsDisplay];
+//    cell.manualSelection=YES;
+    cell.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:153/255.0 alpha:1];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView
+didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    ColorCollectionViewCell *cell=(ColorCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor clearColor];
+
+//    [cell setNeedsDisplay];
+//    cell.manualSelection=NO;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+        ColorCollectionViewCell *cell=(ColorCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+        [cell setNeedsDisplay];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+        ColorCollectionViewCell *cell=(ColorCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+        [cell setNeedsDisplay];
 }
 
 @end

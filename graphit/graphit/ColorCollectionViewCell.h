@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Color.h"
 @interface ColorCollectionViewCell : UICollectionViewCell
+//These rgb values are between 0 to 1
+@property (nonatomic) CGFloat r;
+@property (nonatomic) CGFloat g;
+@property (nonatomic) CGFloat b;
 
 @end

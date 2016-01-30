@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15B42" minimumToolsVersion="Automatic">
-    <entity name="Axis" syncable="YES">
+    <entity name="Axis" representedClassName="Axis" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="referenceValue" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
-    <entity name="BarCollection" syncable="YES">
+    <entity name="BarCollection" representedClassName="BarCollection" syncable="YES">
         <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="barGraph" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BarGraph" inverseName="barCollections" inverseEntity="BarGraph" syncable="YES"/>
         <relationship name="barValues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BarValue" inverseName="barCollection" inverseEntity="BarValue" syncable="YES"/>
     </entity>
-    <entity name="BarGraph" parentEntity="Document" syncable="YES">
+    <entity name="BarGraph" representedClassName="BarGraph" parentEntity="Document" syncable="YES">
         <attribute name="scale" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="barCollections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BarCollection" inverseName="barGraph" inverseEntity="BarCollection" syncable="YES"/>
         <relationship name="yAxis" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Axis" syncable="YES"/>
     </entity>
-    <entity name="BarValue" syncable="YES">
+    <entity name="BarValue" representedClassName="BarValue" syncable="YES">
         <attribute name="rank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="barCollection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BarCollection" inverseName="barValues" inverseEntity="BarCollection" syncable="YES"/>
         <relationship name="legend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Legend" syncable="YES"/>
     </entity>
-    <entity name="Color" syncable="YES">
+    <entity name="Color" representedClassName="Color" syncable="YES">
         <attribute name="alpha" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="blue" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="green" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="red" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
-    <entity name="DataPoint" syncable="YES">
+    <entity name="DataPoint" representedClassName="DataPoint" syncable="YES">
         <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="y" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="graph" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Graph" inverseName="dataPoints" inverseEntity="Graph" syncable="YES"/>
     </entity>
-    <entity name="Document">
+    <entity name="Document" representedClassName="Document">
         <attribute name="lastEdited" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="timeStamp" optional="YES" attributeType="Date">
             <userInfo/>
@@ -40,36 +40,36 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <userInfo/>
     </entity>
-    <entity name="Graph" parentEntity="Document" syncable="YES">
+    <entity name="Graph" representedClassName="Graph" parentEntity="Document" syncable="YES">
         <attribute name="scale" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="dataPoints" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DataPoint" inverseName="graph" inverseEntity="DataPoint" syncable="YES"/>
         <relationship name="xAxis" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Axis" syncable="YES"/>
         <relationship name="yAxis" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Axis" syncable="YES"/>
     </entity>
-    <entity name="Legend" syncable="YES">
+    <entity name="Legend" representedClassName="Legend" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="legendColor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Color" syncable="YES"/>
     </entity>
-    <entity name="PieChart" parentEntity="Document" syncable="YES">
+    <entity name="PieChart" representedClassName="PieChart" parentEntity="Document" syncable="YES">
         <attribute name="angle" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="pieValues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PieValue" syncable="YES"/>
     </entity>
-    <entity name="PieValue" syncable="YES">
+    <entity name="PieValue" representedClassName="PieValue" syncable="YES">
         <attribute name="rank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="legend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Legend" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Document" positionX="187" positionY="162" width="128" height="88"/>
-        <element name="PieChart" positionX="45" positionY="270" width="128" height="73"/>
-        <element name="PieValue" positionX="36" positionY="74" width="128" height="88"/>
-        <element name="Color" positionX="513" positionY="570" width="128" height="105"/>
-        <element name="Legend" positionX="504" positionY="81" width="128" height="73"/>
-        <element name="Axis" positionX="322" positionY="609" width="128" height="75"/>
-        <element name="BarValue" positionX="475" positionY="405" width="128" height="103"/>
+        <element name="Axis" positionX="322" positionY="609" width="128" height="73"/>
         <element name="BarCollection" positionX="45" positionY="392" width="128" height="103"/>
         <element name="BarGraph" positionX="135" positionY="594" width="128" height="88"/>
+        <element name="BarValue" positionX="475" positionY="405" width="128" height="103"/>
+        <element name="Color" positionX="513" positionY="570" width="128" height="103"/>
         <element name="DataPoint" positionX="369" positionY="171" width="128" height="88"/>
+        <element name="Document" positionX="187" positionY="162" width="128" height="88"/>
         <element name="Graph" positionX="306" positionY="314" width="128" height="103"/>
+        <element name="Legend" positionX="504" positionY="81" width="128" height="73"/>
+        <element name="PieChart" positionX="45" positionY="270" width="128" height="73"/>
+        <element name="PieValue" positionX="36" positionY="74" width="128" height="88"/>
     </elements>
 </model>

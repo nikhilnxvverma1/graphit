@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddPieValueViewController : UIViewController<UITextFieldDelegate>
+@interface AddPieValueViewController : UIViewController<UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *value;
 @property (weak, nonatomic) IBOutlet UIButton *done;
+@property (weak, nonatomic) IBOutlet UICollectionView *colorPicker;
 
 - (IBAction)nameDidGetEdited:(UITextField *)sender;
 
