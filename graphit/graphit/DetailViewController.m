@@ -53,7 +53,7 @@
                     action:@selector(dismissKeyboard:)
           forControlEvents:UIControlEventEditingDidEndOnExit];
     [self stringFromModel:self.detailItem];
-
+    [self.pieChartView setModel:self.detailItem];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -139,7 +139,7 @@
         //we will modify the document and save it to iCloud
         [self updateDocument];
     }
-    
+    [self.pieChartView setNeedsDisplay];
 }
 
 #pragma mark - Legend table management
@@ -229,6 +229,7 @@
     }else{
         AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
         [delegate.managedObjectContext deleteObject:object];
+        [self.pieChartView setNeedsDisplay];
         //we will modify the document and save it to iCloud
         [self updateDocument];
     }

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PieChart.h"
 
 @interface PieChartView : UIView
 @property (weak, nonatomic) UILabel *pieValueDescription;
+@property (weak, nonatomic) PieChart *model;
 @end
