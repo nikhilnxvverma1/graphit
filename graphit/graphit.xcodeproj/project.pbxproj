@@ -51,6 +51,7 @@
 		C4F54EEE1C5C8BCE0006224B /* PieValue+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54EEB1C5C8BCD0006224B /* PieValue+CoreDataProperties.m */; };
 		C4F54EEF1C5C8BCE0006224B /* PieValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54EED1C5C8BCD0006224B /* PieValue.m */; };
 		C4F54EF11C5CF5660006224B /* ColorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4F54EF01C5CF5660006224B /* ColorList.plist */; };
+		C4FDC41A1C5E288900F2D3B1 /* PieChartDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC4191C5E288900F2D3B1 /* PieChartDocument.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,8 @@
 		C4F54EED1C5C8BCD0006224B /* PieValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieValue.m; sourceTree = "<group>"; };
 		C4F54EF01C5CF5660006224B /* ColorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorList.plist; sourceTree = "<group>"; };
 		C4F54F311C5D50C40006224B /* graphit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = graphit.entitlements; sourceTree = "<group>"; };
+		C4FDC4181C5E288900F2D3B1 /* PieChartDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartDocument.h; sourceTree = "<group>"; };
+		C4FDC4191C5E288900F2D3B1 /* PieChartDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartDocument.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +236,8 @@
 				C4F54E0A1C5C225E0006224B /* ColorCollectionViewCell.h */,
 				C4F54E0B1C5C225E0006224B /* ColorCollectionViewCell.m */,
 				C4F54EF01C5CF5660006224B /* ColorList.plist */,
+				C4FDC4181C5E288900F2D3B1 /* PieChartDocument.h */,
+				C4FDC4191C5E288900F2D3B1 /* PieChartDocument.m */,
 			);
 			path = graphit;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 				C4F54DFD1C5BA1FF0006224B /* SWLongPressGestureRecognizer.m in Sources */,
 				C4F54EC41C5C73C10006224B /* Axis+CoreDataProperties.m in Sources */,
 				C4F54DFC1C5BA1FF0006224B /* SWCellScrollView.m in Sources */,
+				C4FDC41A1C5E288900F2D3B1 /* PieChartDocument.m in Sources */,
 				C4F54EDD1C5C830A0006224B /* UtilColor.m in Sources */,
 				C4F54DB71C5B20030006224B /* graphit.xcdatamodeld in Sources */,
 				C4F54ED01C5C73C10006224B /* Graph+CoreDataProperties.m in Sources */,

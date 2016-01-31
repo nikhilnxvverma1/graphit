@@ -206,8 +206,8 @@
                name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
              object:psc];
     
-    
-    NSPersistentStore *store=[_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:storeOptions error:&error];
+    //we are not doint core data with iCloud, mind the options: param
+    NSPersistentStore *store=[_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];
     if (!store) {
         // Report any error we got.
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
@@ -256,6 +256,8 @@
         }
     }
 }
+
+
 
 
 // Subscribe to NSPersistentStoreDidImportUbiquitousContentChangesNotification

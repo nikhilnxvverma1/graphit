@@ -14,10 +14,11 @@
 #import "Legend.h"
 
 @interface DetailViewController ()
-
+@property PieChartDocument *document;
 @end
 
 @implementation DetailViewController
+@synthesize document;
 
 #pragma mark - Managing the detail item
 
@@ -27,6 +28,9 @@
             
         // Update the view.
         [self configureView];
+        
+        //set the document
+        [self setPieChartDocument];
     }
 }
 
@@ -48,6 +52,7 @@
     [self.header addTarget:self
                     action:@selector(dismissKeyboard:)
           forControlEvents:UIControlEventEditingDidEndOnExit];
+    [self stringFromModel:self.detailItem];
 
 }
 
@@ -98,6 +103,8 @@
     AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
     [self.detailItem setValue:sender.text forKey:@"title"];
     [delegate saveContext];
+    //we will modify the document and save it to iCloud
+    [self updateDocument];
 }
 
 -(void)backFromPieValue:(UIStoryboardSegue*)segue{
@@ -129,6 +136,8 @@
         [pieValue setValue:self.detailItem forKey:@"pieChart"];
         
         [delegate saveContext];
+        //we will modify the document and save it to iCloud
+        [self updateDocument];
     }
     
 }
@@ -218,9 +227,10 @@
         editPieValue.selectedColor=object.legend.legendColor;
         [editPieValue.done setEnabled:[editPieValue validInput]];
     }else{
-        NSLog(@"Handle delete");
         AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
         [delegate.managedObjectContext deleteObject:object];
+        //we will modify the document and save it to iCloud
+        [self updateDocument];
     }
 }
 
@@ -330,6 +340,97 @@
     [self.legendTable endUpdates];
 }
 
+#pragma mark - iCloud documents
 
+-(void)setPieChartDocument{
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyyMMdd_hhmmss"];
+    
+    NSString *fileName = [NSString stringWithFormat:@"PieChart_%@",
+                          [formatter stringFromDate:self.detailItem.timeStamp]];
+    
+    NSURL *ubiq = [[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:nil];
+    
+    if (ubiq) {
+        
+        self.query = [[NSMetadataQuery alloc] init];
+        [self.query setSearchScopes:[NSArray arrayWithObject:NSMetadataQueryUbiquitousDocumentsScope]];
+        NSString *predicateFormat=[NSString stringWithFormat:@"%%K like '%@'",fileName];
+        NSLog(@"Predicate format is %@",predicateFormat);
+        NSPredicate *pred = [NSPredicate predicateWithFormat: predicateFormat, NSMetadataItemFSNameKey];
+        [self.query setPredicate:pred];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(queryDidFinishGathering:)
+                                                     name:NSMetadataQueryDidFinishGatheringNotification
+                                                   object:self.query];
+        
+        [self.query startQuery];
+        
+    } else {
+        
+        NSLog(@"No iCloud access");
+        
+    }
+}
+
+- (void)queryDidFinishGathering:(NSNotification *)notification {
+    
+    NSMetadataQuery *query = [notification object];
+    [query disableUpdates];
+    [query stopQuery];
+    
+    [self setDocumentDataFromQuery:query];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:NSMetadataQueryDidFinishGatheringNotification
+                                                  object:query];
+    
+    self.query = nil;
+    
+}
+
+- (void)setDocumentDataFromQuery:(NSMetadataQuery *)query {
+    
+    //    [self.notes removeAllObjects];
+    
+    for (NSMetadataItem *item in [query results]) {
+        
+        NSURL *url = [item valueForAttribute:NSMetadataItemURLKey];
+        self.document= [[PieChartDocument alloc] initWithFileURL:url];
+        NSLog(@"File from iCloud which set the document: %@",url);
+//        [doc openWithCompletionHandler:^(BOOL success) {
+//            if (success) {
+//                
+//                //                [self.notes addObject:doc];
+//                //                [self.tableView reloadData];
+//                
+//                NSLog(@"Documents read from iCloud");
+//            } else {
+//                NSLog(@"failed to open from iCloud");
+//            }
+//            
+//        }];
+//        
+    }
+    
+}
+
+-(NSString*)stringFromModel:(PieChart*) model{
+    NSMutableString *string=[[NSMutableString alloc] initWithCapacity:500];
+    [string appendString:[NSString stringWithFormat:@"%@\n",model.title]];
+    [string appendString:[NSString stringWithFormat:@"\"%@\",\"%@\",\"%@\",\"%@\",\"%@\",\"%@\",\n",@"r",@"g",@"b",@"a",@"name",@"value"]];
+    
+    for(PieValue *pieValue in model.pieValues){
+        [string appendString:[NSString stringWithFormat:@"\"%@\",\"%@\",\"%@\",\"%@\",\"%@\",\"%@\",\n",pieValue.legend.legendColor.red,pieValue.legend.legendColor.green,pieValue.legend.legendColor.blue,pieValue.legend.legendColor.alpha,pieValue.legend.name,pieValue.value]];
+    }
+    NSLog(@"%@",string);
+    return string;
+}
+
+-(void)updateDocument{
+    self.document.noteContent = [self stringFromModel:self.detailItem];
+    [self.document updateChangeCount:UIDocumentChangeDone];
+}
 
 @end

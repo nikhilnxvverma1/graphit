@@ -1,16 +1,24 @@
 //
 //  PieChart.m
-//  graphit
+//  graphit-mac
 //
-//  Created by Nikhil Verma on 29/01/16.
+//  Created by Nikhil Verma on 31/01/16.
 //  Copyright © 2016 Nikhil Verma. All rights reserved.
 //
 
 #import "PieChart.h"
-#import "PieValue.h"
 
 @implementation PieChart
 
-// Insert code here to add functionality to your managed object subclass
+-(id)init{
+    if(self=[super init]){
+        self.pieValues=[NSMutableArray array];
+    }
+    return self;
+}
+
+-(void)addPieValue:(PieValue*)pieValue{
+    [self.pieValues addObject:pieValue];
+}
 
 @end

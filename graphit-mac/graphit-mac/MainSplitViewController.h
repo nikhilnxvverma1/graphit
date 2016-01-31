@@ -9,5 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 @interface MainSplitViewController : NSSplitViewController
-
+@property (strong) NSMetadataQuery *query;
+@property (strong) NSMutableArray *documents;
 @end

@@ -1,24 +1,15 @@
 //
 //  PieChart.h
-//  graphit
+//  graphit-mac
 //
-//  Created by Nikhil Verma on 29/01/16.
+//  Created by Nikhil Verma on 31/01/16.
 //  Copyright © 2016 Nikhil Verma. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "Document.h"
-
-@class PieValue;
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface PieChart : Document
-
-// Insert code here to declare functionality of your managed object subclass
-
+#import "PieValue.h"
+@interface PieChart : NSObject
+@property (strong) NSString *title;
+@property (strong) NSMutableArray *pieValues;
+-(void)addPieValue:(PieValue*)pieValue;
 @end
-
-NS_ASSUME_NONNULL_END
-
-#import "PieChart+CoreDataProperties.h"

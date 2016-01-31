@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "PieChartDocument.h"
 
 @interface MasterViewController ()
 
@@ -19,45 +20,46 @@
     [super viewDidLoad];
     
     //enable push notifications for data
-    [[NSNotificationCenter defaultCenter]
-     addObserverForName:NSPersistentStoreCoordinatorStoresWillChangeNotification
-     object:self.managedObjectContext.persistentStoreCoordinator
-     queue:[NSOperationQueue mainQueue]
-     usingBlock:^(NSNotification *note) {
-        
-         [self.managedObjectContext performBlock:^{
-            
-             if([self.managedObjectContext hasChanges]){
-                 NSError *saveError;
-                 if(![self.managedObjectContext save:&saveError]){
-                     NSLog(@"Save Error %@",saveError);
-                 }
-             }else{
-                 [self.managedObjectContext reset];
-             }
-            
+//    [[NSNotificationCenter defaultCenter]
+//     addObserverForName:NSPersistentStoreCoordinatorStoresWillChangeNotification
+//     object:self.managedObjectContext.persistentStoreCoordinator
+//     queue:[NSOperationQueue mainQueue]
+//     usingBlock:^(NSNotification *note) {
+//        
+//         [self.managedObjectContext performBlock:^{
+//            
+//             if([self.managedObjectContext hasChanges]){
+//                 NSError *saveError;
+//                 if(![self.managedObjectContext save:&saveError]){
+//                     NSLog(@"Save Error %@",saveError);
+//                 }
+//             }else{
+//                 [self.managedObjectContext reset];
+//             }
+//            
+////             [self.managedObjectContext reset];
+//             NSLog(@"NOTIFICATION: insde perform block00");
+//         }];
+//         // drop any managed object references
+//         // disable user interface with setEnabled: or an overlay
+//         NSLog(@"Store will be changing");
+//     }];
+//    [[NSNotificationCenter defaultCenter]
+//     addObserverForName:NSPersistentStoreCoordinatorStoresDidChangeNotification
+//     object:self.managedObjectContext.persistentStoreCoordinator
+//     queue:[NSOperationQueue mainQueue]
+//     usingBlock:^(NSNotification *note) {
+//         NSLog(@"Store has changed");
+//         [self.managedObjectContext performBlock:^{
 //             [self.managedObjectContext reset];
-             NSLog(@"NOTIFICATION: insde perform block00");
-         }];
-         // drop any managed object references
-         // disable user interface with setEnabled: or an overlay
-         NSLog(@"Store will be changing");
-     }];
-    [[NSNotificationCenter defaultCenter]
-     addObserverForName:NSPersistentStoreCoordinatorStoresDidChangeNotification
-     object:self.managedObjectContext.persistentStoreCoordinator
-     queue:[NSOperationQueue mainQueue]
-     usingBlock:^(NSNotification *note) {
-         NSLog(@"Store has changed");
-         [self.managedObjectContext performBlock:^{
-             [self.managedObjectContext reset];
-             NSLog(@"NOTIFICATION: insde perform block");
-         }];
-         // drop any managed object references
-         // disable user interface with setEnabled: or an overlay
-//             NSLog(@"Store has changed");
-     }];
+//             NSLog(@"NOTIFICATION: insde perform block");
+//         }];
+//         // drop any managed object references
+//         // disable user interface with setEnabled: or an overlay
+////             NSLog(@"Store has changed");
+//     }];
     
+    [self loadDocuments];
     
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -87,9 +89,11 @@
         
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [pieChart setValue:[NSDate date] forKey:@"timeStamp"];
-    [pieChart setValue:[[NSDate date] description] forKey:@"title"];
-        
+    NSDate *date=[NSDate date];
+    [pieChart setValue:date forKey:@"timeStamp"];
+    [pieChart setValue:[date description] forKey:@"title"];
+    [self addPieChartDocument:date];
+    
     // Save the context.
     NSError *error = nil;
     if (![context save:&error]) {
@@ -98,6 +102,100 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+}
+
+-(void)addPieChartDocument:(NSDate*)date{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyyMMdd_hhmmss"];
+    
+    NSString *fileName = [NSString stringWithFormat:@"PieChart_%@",
+                          [formatter stringFromDate:[NSDate date]]];
+    
+    NSURL *ubiq = [[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:nil];
+    NSURL *ubiquitousPackage = [[ubiq URLByAppendingPathComponent:@"Documents"]
+                                URLByAppendingPathComponent:fileName];
+    
+    PieChartDocument *doc = [[PieChartDocument alloc] initWithFileURL:ubiquitousPackage];
+    
+    [doc saveToURL:[doc fileURL] forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+        
+        if (success) {
+            
+//            [self.notes addObject:doc];
+//            [self.tableView reloadData];
+            NSLog(@"Added pie chart document to iCloud");
+            
+        }
+        
+    }];
+
+}
+
+- (void)loadDocuments {
+    
+    NSURL *ubiq = [[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:nil];
+    
+    if (ubiq) {
+        
+        self.query = [[NSMetadataQuery alloc] init];
+        [self.query setSearchScopes:[NSArray arrayWithObject:NSMetadataQueryUbiquitousDocumentsScope]];
+        NSPredicate *pred = [NSPredicate predicateWithFormat: @"%K like 'PieChart_*'", NSMetadataItemFSNameKey];
+        [self.query setPredicate:pred];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(queryDidFinishGathering:)
+                                                     name:NSMetadataQueryDidFinishGatheringNotification
+                                                   object:self.query];
+        
+        [self.query startQuery];
+        
+    } else {
+        
+        NSLog(@"No iCloud access");
+        
+    }
+    
+}
+
+- (void)queryDidFinishGathering:(NSNotification *)notification {
+    
+    NSMetadataQuery *query = [notification object];
+    [query disableUpdates];
+    [query stopQuery];
+    
+    [self loadData:query];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:NSMetadataQueryDidFinishGatheringNotification
+                                                  object:query];
+    
+    self.query = nil;
+    
+}
+
+- (void)loadData:(NSMetadataQuery *)query {
+    
+//    [self.notes removeAllObjects];
+    
+    for (NSMetadataItem *item in [query results]) {
+        
+        NSURL *url = [item valueForAttribute:NSMetadataItemURLKey];
+        PieChartDocument *doc = [[PieChartDocument alloc] initWithFileURL:url];
+        NSLog(@"File from iCloud: %@",[doc fileURL]);
+        [doc openWithCompletionHandler:^(BOOL success) {
+            if (success) {
+                
+//                [self.notes addObject:doc];
+//                [self.tableView reloadData];
+                
+                NSLog(@"Documents read from iCloud");
+            } else {
+                NSLog(@"failed to open from iCloud");
+            }
+            
+        }];
+        
+    }
+    
 }
 
 #pragma mark - Segues

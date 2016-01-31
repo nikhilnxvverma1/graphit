@@ -10,6 +10,7 @@
 #import "PieChartView.h"
 #import "SWTableViewCell.h"
 #import "PieChart.h"
+#import "PieChartDocument.h"
 
 @interface DetailViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,SWTableViewCellDelegate,UITextFieldDelegate,NSFetchedResultsControllerDelegate>
 
@@ -21,5 +22,6 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 - (IBAction)didEditHeader:(UITextField *)sender;
 -(IBAction)backFromPieValue:(UIStoryboardSegue*)segue;
+@property (strong) NSMetadataQuery *query;
 @end
 
