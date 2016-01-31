@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 - (IBAction)didEditHeader:(UITextField *)sender;
 -(IBAction)backFromPieValue:(UIStoryboardSegue*)segue;
+- (IBAction)selectAllText:(UITextField *)sender;
 @property (strong) NSMetadataQuery *query;
 @end
 

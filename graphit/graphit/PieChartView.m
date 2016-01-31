@@ -12,6 +12,7 @@
 #import "Legend.h"
 #import "Color.h"
 #define TO_RAD(angle) ( ( angle ) / 180.0 * M_PI )
+#define TO_DEG( radians ) ( ( radians ) * ( 180.0 / M_PI ) )
 
 @implementation PieChartView
 @synthesize pieValueDescription;
@@ -105,10 +106,16 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"Touch Began(PieChart)");
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint location = [touch locationInView:touch.view];
+    [self showValueForTouch:location];
     [pieValueDescription setAlpha:1];
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"Touch Moved(PieChart)");
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint location = [touch locationInView:touch.view];
+    [self showValueForTouch:location];
 }
 - (void)fadeOutPieValueDescription {
     CABasicAnimation *fadeOut=[CABasicAnimation animation];
@@ -136,7 +143,9 @@
     CGPoint center;
     center.x = bounds.origin.x + bounds.size.width / 2.0;
     center.y = bounds.origin.y + bounds.size.height / 2.0;
-    CGFloat radius=bounds.size.height/3;
+//    CGFloat radius=bounds.size.height/3;
+    
+    float vectorAngle=[self angleOfVector:center :point];
     
     //find the sum first
     float sum=0;
@@ -149,15 +158,51 @@
                                  ];
     
     NSArray *sortedPieValues = [self.model.pieValues sortedArrayUsingDescriptors:sortDescriptors];
+    PieValue *touchedPie=nil;
     float angleStart=0;
     for(PieValue *pieValue in sortedPieValues){
         float angleValue=([pieValue.value floatValue]/sum)*360;
         NSLog(@"angle is %f,%f",angleStart,angleValue);
         
-        
+        if(vectorAngle>=angleStart&&vectorAngle<=(angleStart+angleValue)){
+            touchedPie=pieValue;
+            break;
+        }
         angleStart+=angleValue;
-        
     }
+    self.pieValueDescription.text=[NSString stringWithFormat:@"%@: %@",touchedPie.legend.name,touchedPie.value];
+    Color *color=touchedPie.legend.legendColor;
+    self.pieValueDescription.textColor=[UIColor colorWithRed:[color.red floatValue] green:[color.green floatValue] blue:[color.blue floatValue] alpha:[color.alpha floatValue]];
+    
 }
+
+-(int)angleOfVector:(CGPoint)origin :(CGPoint) towards{
+    int inDegrees=0;
+    if (towards.x - origin.x == 0) {
+        inDegrees = 90;
+        if(towards.y<origin.y){
+            inDegrees+=180;
+        }
+    }else{
+        double slope=(double)(towards.y-origin.y)/(towards.x-origin.x);
+        inDegrees=TO_DEG(atan(slope));
+        //angle is between +90 and -90
+        if(towards.y>origin.y){
+            if(towards.x>origin.x){//first quadrant
+                //do nothing
+            }else{//second quadrant
+                inDegrees+=180;
+            }
+        }else{
+            if(towards.x<origin.x){//third quadrant
+                inDegrees+=180;
+            }else{//fourth quadrant
+                inDegrees+=360;
+            }
+        }
+    }
+    return inDegrees;
+}
+
 
 @end

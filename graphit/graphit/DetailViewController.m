@@ -142,6 +142,11 @@
     [self.pieChartView setNeedsDisplay];
 }
 
+- (IBAction)selectAllText:(UITextField *)sender {
+    //we are providing the clear button
+//    [sender selectAll:self];
+}
+
 #pragma mark - Legend table management
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -163,8 +168,8 @@
     if (cell == nil) {
         cell = [[PieValueTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
     }
-    [self configureCell:cell atIndexPath:indexPath];
     
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
@@ -172,7 +177,15 @@
     PieValue *object = (PieValue*)[self.fetchedResultsController objectAtIndexPath:indexPath];
 //    cell.textLabel.text = [[object valueForKey:@"legend.name"] description];
     cell.textLabel.text = object.legend.name;
-//    cell.textLabel.text = @"Color";
+//    UIGraphicsBeginImageContextWithOptions(CGSizeMake(36, 36), YES, 0.0);
+//    UIImage *blank = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+    
+    cell.imageView.image = [UIImage imageNamed:@"white_square.png"];
+    cell.imageView.image=[cell.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    Color *color=object.legend.legendColor;
+    cell.imageView.tintColor=[UIColor colorWithRed:[color.red floatValue] green:[color.green floatValue] blue:[color.blue floatValue] alpha:[color.alpha floatValue]];
+
     cell.rightUtilityButtons=[self editingOptions];
     cell.delegate=self;
 

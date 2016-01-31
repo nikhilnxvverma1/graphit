@@ -97,13 +97,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="mOI-FS-AaM">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pie Chart" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="qKv-cu-mDJ">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pie Chart" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="qKv-cu-mDJ">
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             <connections>
                                 <action selector="didEditHeader:" destination="JEX-9P-axG" eventType="editingDidEnd" id="4se-Pj-vSO"/>
+                                <action selector="selectAllText:" destination="JEX-9P-axG" eventType="editingDidBegin" id="BI3-Cb-CsQ"/>
                             </connections>
                         </textField>
                     </navigationItem>
