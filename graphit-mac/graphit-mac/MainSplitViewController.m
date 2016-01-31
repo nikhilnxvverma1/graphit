@@ -8,6 +8,7 @@
 
 #import "MainSplitViewController.h"
 #import "PieChartDocument.h"
+#import "AppDelegate.h"
 
 @interface MainSplitViewController ()
 
@@ -21,7 +22,7 @@
     NSLog(@"Came here to split view controller");
     
     //load documents
-    [self loadDocuments];
+//    [self loadDocuments];
     
 }
 

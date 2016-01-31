@@ -14,6 +14,6 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-
+@property (strong,nonatomic) NSMutableArray *pieCharts;
 @end
 
