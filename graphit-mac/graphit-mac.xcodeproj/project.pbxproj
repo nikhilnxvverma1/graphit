@@ -12,7 +12,6 @@
 		C4F54F061C5D4CC30006224B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F051C5D4CC30006224B /* ViewController.m */; };
 		C4F54F091C5D4CC30006224B /* graphit_mac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F071C5D4CC30006224B /* graphit_mac.xcdatamodeld */; };
 		C4F54F0B1C5D4CC30006224B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4F54F0A1C5D4CC30006224B /* Assets.xcassets */; };
-		C4F54F0E1C5D4CC30006224B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F54F0C1C5D4CC30006224B /* Main.storyboard */; };
 		C4F54F191C5D4CC30006224B /* graphit_macTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F181C5D4CC30006224B /* graphit_macTests.m */; };
 		C4F54F241C5D4CC30006224B /* graphit_macUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F231C5D4CC30006224B /* graphit_macUITests.m */; };
 		C4F54F3A1C5D6A930006224B /* graphit.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F391C5D6A930006224B /* graphit.xcdatamodel */; };
@@ -51,7 +50,6 @@
 		C4F54F051C5D4CC30006224B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C4F54F081C5D4CC30006224B /* graphit_mac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = graphit_mac.xcdatamodel; sourceTree = "<group>"; };
 		C4F54F0A1C5D4CC30006224B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C4F54F0D1C5D4CC30006224B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4F54F0F1C5D4CC30006224B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4F54F141C5D4CC30006224B /* graphit-macTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "graphit-macTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4F54F181C5D4CC30006224B /* graphit_macTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = graphit_macTests.m; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				C4F54F041C5D4CC30006224B /* ViewController.h */,
 				C4F54F051C5D4CC30006224B /* ViewController.m */,
 				C4F54F0A1C5D4CC30006224B /* Assets.xcassets */,
-				C4F54F0C1C5D4CC30006224B /* Main.storyboard */,
 				C4F54F0F1C5D4CC30006224B /* Info.plist */,
 				C4F54F071C5D4CC30006224B /* graphit_mac.xcdatamodeld */,
 				C4F54F391C5D6A930006224B /* graphit.xcdatamodel */,
@@ -298,7 +295,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4F54F0B1C5D4CC30006224B /* Assets.xcassets in Resources */,
-				C4F54F0E1C5D4CC30006224B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,17 +364,6 @@
 			targetProxy = C4F54F201C5D4CC30006224B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C4F54F0C1C5D4CC30006224B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C4F54F0D1C5D4CC30006224B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C4F54F261C5D4CC30006224B /* Debug */ = {

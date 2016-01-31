@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -11,11 +12,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="graphit-mac" id="1Xt-HY-uBw">
+                            <menuItem title="graphit-viewer" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="graphit-mac" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="graphit-viewer" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About graphit-mac" id="5kV-Vb-QxS">
+                                        <menuItem title="About graphit-viewer" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -29,7 +30,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide graphit-mac" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide graphit-viewer" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -47,7 +48,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit graphit-mac" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit graphit-viewer" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -628,7 +629,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="graphit-mac Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="graphit-viewer Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -651,84 +652,64 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Graph it" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Graph It" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="720" height="640"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="720" height="640"/>
                     </window>
                     <connections>
-                        <segue destination="Am4-9V-pDt" kind="relationship" relationship="window.shadowedContentViewController" id="Wtc-vp-Fgb"/>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Graph it-->
-        <scene sceneID="OqG-mj-JJT">
+        <!--View Controller-->
+        <scene sceneID="hIz-AP-VOD">
             <objects>
-                <splitViewController title="Graph it" id="Am4-9V-pDt" customClass="MainSplitViewController" sceneMemberID="viewController">
-                    <splitViewItems>
-                        <splitViewItem id="ekH-pD-qwu"/>
-                        <splitViewItem id="IlH-yG-9mM"/>
-                    </splitViewItems>
-                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="GfC-8f-Qru">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </splitView>
-                    <connections>
-                        <outlet property="view" destination="GfC-8f-Qru" id="FrZ-NS-vkd"/>
-                        <segue destination="a4j-Rq-gak" kind="relationship" relationship="splitItems" id="dGt-EB-mSZ"/>
-                        <segue destination="iZE-10-Mbp" kind="relationship" relationship="splitItems" id="4FP-98-mqv"/>
-                    </connections>
-                </splitViewController>
-                <customObject id="RYo-MH-UIL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-219" y="1037"/>
-        </scene>
-        <!--Master View Controller-->
-        <scene sceneID="pH8-ad-X4a">
-            <objects>
-                <viewController id="a4j-Rq-gak" customClass="MasterViewController" sceneMemberID="viewController">
-                    <view key="view" id="zOh-Lk-cVR">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="42" horizontalPageScroll="10" verticalLineScroll="42" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sad-cc-VbN">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <clipView key="contentView" id="xbI-iS-thh">
-                                    <rect key="frame" x="1" y="1" width="448" height="298"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="U8g-LI-QVN" customClass="PieChartDiagramView">
+                                <rect key="frame" x="125" y="0.0" width="295" height="270"/>
+                            </customView>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75F-8S-Qb3">
+                                <rect key="frame" x="0.0" y="0.0" width="126" height="270"/>
+                                <clipView key="contentView" id="Q6x-s1-ENU">
+                                    <rect key="frame" x="1" y="1" width="124" height="268"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="40" rowSizeStyle="automatic" viewBased="YES" id="h4q-Ne-qZA">
-                                            <rect key="frame" x="0.0" y="0.0" width="448" height="0.0"/>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="fsa-sD-lYk">
+                                            <rect key="frame" x="0.0" y="0.0" width="124" height="268"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="445" minWidth="40" maxWidth="1000" id="Grw-JP-Y9x">
+                                                <tableColumn identifier="TableCell" width="121" minWidth="40" maxWidth="1000" id="SCR-wg-TXz">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="YZs-At-FP1">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="Cvi-zN-sOM">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="TableCell" id="3Yk-fv-rEA">
-                                                            <rect key="frame" x="1" y="1" width="445" height="40"/>
+                                                        <tableCellView id="iMW-59-KCP">
+                                                            <rect key="frame" x="1" y="1" width="121" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmb-9K-nKQ">
-                                                                    <rect key="frame" x="0.0" y="23" width="100" height="17"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="19x-aj-Z0Z">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRc-yE-L4O">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="bTF-2l-XWb">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -736,7 +717,7 @@
                                                                 </textField>
                                                             </subviews>
                                                             <connections>
-                                                                <outlet property="textField" destination="kmb-9K-nKQ" id="ccc-Ss-Fk5"/>
+                                                                <outlet property="textField" destination="DRc-yE-L4O" id="j8E-43-LI5"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -746,54 +727,35 @@
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="4C7-TJ-BNl">
-                                    <rect key="frame" x="1" y="119" width="223" height="15"/>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="bnX-lb-D1b">
+                                    <rect key="frame" x="1" y="253" width="142" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="k51-Cg-bDJ">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="s1l-XY-ngV">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Sad-cc-VbN" firstAttribute="centerY" secondItem="zOh-Lk-cVR" secondAttribute="centerY" id="9PI-Xy-UNX"/>
-                            <constraint firstItem="Sad-cc-VbN" firstAttribute="width" secondItem="zOh-Lk-cVR" secondAttribute="width" id="ZAy-n7-fON"/>
-                            <constraint firstItem="Sad-cc-VbN" firstAttribute="centerX" secondItem="zOh-Lk-cVR" secondAttribute="centerX" id="nxo-MB-dnA"/>
-                            <constraint firstItem="Sad-cc-VbN" firstAttribute="height" secondItem="zOh-Lk-cVR" secondAttribute="height" id="rp0-Fq-pQM"/>
+                            <constraint firstItem="U8g-LI-QVN" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="1LN-OU-Kzj"/>
+                            <constraint firstItem="75F-8S-Qb3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="2Yg-K2-vz1"/>
+                            <constraint firstAttribute="trailing" secondItem="U8g-LI-QVN" secondAttribute="trailing" id="CKG-UK-cd5"/>
+                            <constraint firstItem="U8g-LI-QVN" firstAttribute="leading" secondItem="fsa-sD-lYk" secondAttribute="trailing" id="Iib-in-J9O"/>
+                            <constraint firstItem="75F-8S-Qb3" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" multiplier="0.3" id="dvc-Tx-weF"/>
+                            <constraint firstItem="75F-8S-Qb3" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="o8F-LJ-ILb"/>
+                            <constraint firstItem="75F-8S-Qb3" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" id="zFV-Zd-ejZ"/>
+                            <constraint firstItem="U8g-LI-QVN" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" id="zKM-CE-kLd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="h4q-Ne-qZA" id="tWW-am-flK"/>
+                        <outlet property="pieChartView" destination="U8g-LI-QVN" id="56w-tn-vc6"/>
+                        <outlet property="tableView" destination="fsa-sD-lYk" id="cVI-j6-ViB"/>
                     </connections>
                 </viewController>
-                <customObject id="ZIs-yG-755" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="451" y="856"/>
-        </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="XLp-QF-RPO">
-            <objects>
-                <viewController id="iZE-10-Mbp" customClass="DetailViewController" sceneMemberID="viewController">
-                    <view key="view" id="UZa-dV-zB3">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="dr1-ZA-Bn5" customClass="PieChartDiagramView">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                            </customView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="dr1-ZA-Bn5" firstAttribute="width" secondItem="UZa-dV-zB3" secondAttribute="width" id="OfZ-58-Ge7"/>
-                            <constraint firstItem="dr1-ZA-Bn5" firstAttribute="centerY" secondItem="UZa-dV-zB3" secondAttribute="centerY" id="Rcg-mU-Li5"/>
-                            <constraint firstItem="dr1-ZA-Bn5" firstAttribute="centerX" secondItem="UZa-dV-zB3" secondAttribute="centerX" id="hsB-uA-Vba"/>
-                            <constraint firstItem="dr1-ZA-Bn5" firstAttribute="height" secondItem="UZa-dV-zB3" secondAttribute="height" id="yLF-4z-ab6"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="h8O-wX-Hiu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="451" y="1217"/>
+            <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
 </document>

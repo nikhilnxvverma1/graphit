@@ -1,0 +1,560 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C4FDC46E1C5EB41900F2D3B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC46D1C5EB41900F2D3B1 /* AppDelegate.m */; };
+		C4FDC4711C5EB41900F2D3B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC4701C5EB41900F2D3B1 /* main.m */; };
+		C4FDC4741C5EB41900F2D3B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC4731C5EB41900F2D3B1 /* ViewController.m */; };
+		C4FDC4761C5EB41900F2D3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4FDC4751C5EB41900F2D3B1 /* Assets.xcassets */; };
+		C4FDC4791C5EB41900F2D3B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FDC4771C5EB41900F2D3B1 /* Main.storyboard */; };
+		C4FDC4841C5EB41900F2D3B1 /* graphit_viewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC4831C5EB41900F2D3B1 /* graphit_viewerTests.m */; };
+		C4FDC48F1C5EB41900F2D3B1 /* graphit_viewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC48E1C5EB41900F2D3B1 /* graphit_viewerUITests.m */; };
+		C4FDC4A21C5EB4CD00F2D3B1 /* PieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC49F1C5EB4CD00F2D3B1 /* PieChart.m */; };
+		C4FDC4A31C5EB4CD00F2D3B1 /* PieValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC4A11C5EB4CD00F2D3B1 /* PieValue.m */; };
+		C4FDC4A81C5EB4EB00F2D3B1 /* PieChartDiagramView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC4A51C5EB4EB00F2D3B1 /* PieChartDiagramView.m */; };
+		C4FDC4A91C5EB4EB00F2D3B1 /* PieChartDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC4A71C5EB4EB00F2D3B1 /* PieChartDocument.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4FDC4801C5EB41900F2D3B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4FDC4611C5EB41900F2D3B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4FDC4681C5EB41900F2D3B1;
+			remoteInfo = "graphit-viewer";
+		};
+		C4FDC48B1C5EB41900F2D3B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4FDC4611C5EB41900F2D3B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4FDC4681C5EB41900F2D3B1;
+			remoteInfo = "graphit-viewer";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C4FDC4691C5EB41900F2D3B1 /* graphit-viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "graphit-viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FDC46C1C5EB41900F2D3B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C4FDC46D1C5EB41900F2D3B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C4FDC4701C5EB41900F2D3B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C4FDC4721C5EB41900F2D3B1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C4FDC4731C5EB41900F2D3B1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C4FDC4751C5EB41900F2D3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4FDC4781C5EB41900F2D3B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C4FDC47A1C5EB41900F2D3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4FDC47F1C5EB41900F2D3B1 /* graphit-viewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "graphit-viewerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FDC4831C5EB41900F2D3B1 /* graphit_viewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = graphit_viewerTests.m; sourceTree = "<group>"; };
+		C4FDC4851C5EB41900F2D3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4FDC48A1C5EB41900F2D3B1 /* graphit-viewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "graphit-viewerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FDC48E1C5EB41900F2D3B1 /* graphit_viewerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = graphit_viewerUITests.m; sourceTree = "<group>"; };
+		C4FDC4901C5EB41900F2D3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4FDC49C1C5EB47100F2D3B1 /* graphit-viewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "graphit-viewer.entitlements"; sourceTree = "<group>"; };
+		C4FDC49E1C5EB4CD00F2D3B1 /* PieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChart.h; sourceTree = "<group>"; };
+		C4FDC49F1C5EB4CD00F2D3B1 /* PieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChart.m; sourceTree = "<group>"; };
+		C4FDC4A01C5EB4CD00F2D3B1 /* PieValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieValue.h; sourceTree = "<group>"; };
+		C4FDC4A11C5EB4CD00F2D3B1 /* PieValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieValue.m; sourceTree = "<group>"; };
+		C4FDC4A41C5EB4EB00F2D3B1 /* PieChartDiagramView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartDiagramView.h; sourceTree = "<group>"; };
+		C4FDC4A51C5EB4EB00F2D3B1 /* PieChartDiagramView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartDiagramView.m; sourceTree = "<group>"; };
+		C4FDC4A61C5EB4EB00F2D3B1 /* PieChartDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartDocument.h; sourceTree = "<group>"; };
+		C4FDC4A71C5EB4EB00F2D3B1 /* PieChartDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartDocument.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4FDC4661C5EB41900F2D3B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4FDC47C1C5EB41900F2D3B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4FDC4871C5EB41900F2D3B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C4FDC4601C5EB41900F2D3B1 = {
+			isa = PBXGroup;
+			children = (
+				C4FDC46B1C5EB41900F2D3B1 /* graphit-viewer */,
+				C4FDC4821C5EB41900F2D3B1 /* graphit-viewerTests */,
+				C4FDC48D1C5EB41900F2D3B1 /* graphit-viewerUITests */,
+				C4FDC46A1C5EB41900F2D3B1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4FDC46A1C5EB41900F2D3B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4FDC4691C5EB41900F2D3B1 /* graphit-viewer.app */,
+				C4FDC47F1C5EB41900F2D3B1 /* graphit-viewerTests.xctest */,
+				C4FDC48A1C5EB41900F2D3B1 /* graphit-viewerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4FDC46B1C5EB41900F2D3B1 /* graphit-viewer */ = {
+			isa = PBXGroup;
+			children = (
+				C4FDC49D1C5EB4B800F2D3B1 /* Model */,
+				C4FDC49C1C5EB47100F2D3B1 /* graphit-viewer.entitlements */,
+				C4FDC4A41C5EB4EB00F2D3B1 /* PieChartDiagramView.h */,
+				C4FDC4A51C5EB4EB00F2D3B1 /* PieChartDiagramView.m */,
+				C4FDC4A61C5EB4EB00F2D3B1 /* PieChartDocument.h */,
+				C4FDC4A71C5EB4EB00F2D3B1 /* PieChartDocument.m */,
+				C4FDC46C1C5EB41900F2D3B1 /* AppDelegate.h */,
+				C4FDC46D1C5EB41900F2D3B1 /* AppDelegate.m */,
+				C4FDC4721C5EB41900F2D3B1 /* ViewController.h */,
+				C4FDC4731C5EB41900F2D3B1 /* ViewController.m */,
+				C4FDC4751C5EB41900F2D3B1 /* Assets.xcassets */,
+				C4FDC4771C5EB41900F2D3B1 /* Main.storyboard */,
+				C4FDC47A1C5EB41900F2D3B1 /* Info.plist */,
+				C4FDC46F1C5EB41900F2D3B1 /* Supporting Files */,
+			);
+			path = "graphit-viewer";
+			sourceTree = "<group>";
+		};
+		C4FDC46F1C5EB41900F2D3B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4FDC4701C5EB41900F2D3B1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4FDC4821C5EB41900F2D3B1 /* graphit-viewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C4FDC4831C5EB41900F2D3B1 /* graphit_viewerTests.m */,
+				C4FDC4851C5EB41900F2D3B1 /* Info.plist */,
+			);
+			path = "graphit-viewerTests";
+			sourceTree = "<group>";
+		};
+		C4FDC48D1C5EB41900F2D3B1 /* graphit-viewerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C4FDC48E1C5EB41900F2D3B1 /* graphit_viewerUITests.m */,
+				C4FDC4901C5EB41900F2D3B1 /* Info.plist */,
+			);
+			path = "graphit-viewerUITests";
+			sourceTree = "<group>";
+		};
+		C4FDC49D1C5EB4B800F2D3B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4FDC49E1C5EB4CD00F2D3B1 /* PieChart.h */,
+				C4FDC49F1C5EB4CD00F2D3B1 /* PieChart.m */,
+				C4FDC4A01C5EB4CD00F2D3B1 /* PieValue.h */,
+				C4FDC4A11C5EB4CD00F2D3B1 /* PieValue.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C4FDC4681C5EB41900F2D3B1 /* graphit-viewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4FDC4931C5EB41900F2D3B1 /* Build configuration list for PBXNativeTarget "graphit-viewer" */;
+			buildPhases = (
+				C4FDC4651C5EB41900F2D3B1 /* Sources */,
+				C4FDC4661C5EB41900F2D3B1 /* Frameworks */,
+				C4FDC4671C5EB41900F2D3B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "graphit-viewer";
+			productName = "graphit-viewer";
+			productReference = C4FDC4691C5EB41900F2D3B1 /* graphit-viewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C4FDC47E1C5EB41900F2D3B1 /* graphit-viewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4FDC4961C5EB41900F2D3B1 /* Build configuration list for PBXNativeTarget "graphit-viewerTests" */;
+			buildPhases = (
+				C4FDC47B1C5EB41900F2D3B1 /* Sources */,
+				C4FDC47C1C5EB41900F2D3B1 /* Frameworks */,
+				C4FDC47D1C5EB41900F2D3B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4FDC4811C5EB41900F2D3B1 /* PBXTargetDependency */,
+			);
+			name = "graphit-viewerTests";
+			productName = "graphit-viewerTests";
+			productReference = C4FDC47F1C5EB41900F2D3B1 /* graphit-viewerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C4FDC4891C5EB41900F2D3B1 /* graphit-viewerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4FDC4991C5EB41900F2D3B1 /* Build configuration list for PBXNativeTarget "graphit-viewerUITests" */;
+			buildPhases = (
+				C4FDC4861C5EB41900F2D3B1 /* Sources */,
+				C4FDC4871C5EB41900F2D3B1 /* Frameworks */,
+				C4FDC4881C5EB41900F2D3B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4FDC48C1C5EB41900F2D3B1 /* PBXTargetDependency */,
+			);
+			name = "graphit-viewerUITests";
+			productName = "graphit-viewerUITests";
+			productReference = C4FDC48A1C5EB41900F2D3B1 /* graphit-viewerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4FDC4611C5EB41900F2D3B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Nikhil Verma";
+				TargetAttributes = {
+					C4FDC4681C5EB41900F2D3B1 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = Y6J332URJM;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					C4FDC47E1C5EB41900F2D3B1 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = C4FDC4681C5EB41900F2D3B1;
+					};
+					C4FDC4891C5EB41900F2D3B1 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = C4FDC4681C5EB41900F2D3B1;
+					};
+				};
+			};
+			buildConfigurationList = C4FDC4641C5EB41900F2D3B1 /* Build configuration list for PBXProject "graphit-viewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C4FDC4601C5EB41900F2D3B1;
+			productRefGroup = C4FDC46A1C5EB41900F2D3B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4FDC4681C5EB41900F2D3B1 /* graphit-viewer */,
+				C4FDC47E1C5EB41900F2D3B1 /* graphit-viewerTests */,
+				C4FDC4891C5EB41900F2D3B1 /* graphit-viewerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4FDC4671C5EB41900F2D3B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4FDC4761C5EB41900F2D3B1 /* Assets.xcassets in Resources */,
+				C4FDC4791C5EB41900F2D3B1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4FDC47D1C5EB41900F2D3B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4FDC4881C5EB41900F2D3B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4FDC4651C5EB41900F2D3B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4FDC4A81C5EB4EB00F2D3B1 /* PieChartDiagramView.m in Sources */,
+				C4FDC4741C5EB41900F2D3B1 /* ViewController.m in Sources */,
+				C4FDC4A21C5EB4CD00F2D3B1 /* PieChart.m in Sources */,
+				C4FDC4711C5EB41900F2D3B1 /* main.m in Sources */,
+				C4FDC4A91C5EB4EB00F2D3B1 /* PieChartDocument.m in Sources */,
+				C4FDC4A31C5EB4CD00F2D3B1 /* PieValue.m in Sources */,
+				C4FDC46E1C5EB41900F2D3B1 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4FDC47B1C5EB41900F2D3B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4FDC4841C5EB41900F2D3B1 /* graphit_viewerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4FDC4861C5EB41900F2D3B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4FDC48F1C5EB41900F2D3B1 /* graphit_viewerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4FDC4811C5EB41900F2D3B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4FDC4681C5EB41900F2D3B1 /* graphit-viewer */;
+			targetProxy = C4FDC4801C5EB41900F2D3B1 /* PBXContainerItemProxy */;
+		};
+		C4FDC48C1C5EB41900F2D3B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4FDC4681C5EB41900F2D3B1 /* graphit-viewer */;
+			targetProxy = C4FDC48B1C5EB41900F2D3B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C4FDC4771C5EB41900F2D3B1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4FDC4781C5EB41900F2D3B1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C4FDC4911C5EB41900F2D3B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C4FDC4921C5EB41900F2D3B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C4FDC4941C5EB41900F2D3B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "graphit-viewer/graphit-viewer.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "graphit-viewer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikhilnxvverma1.graphit-viewer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		C4FDC4951C5EB41900F2D3B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "graphit-viewer/graphit-viewer.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "graphit-viewer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikhilnxvverma1.graphit-viewer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		C4FDC4971C5EB41900F2D3B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "graphit-viewerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikhilnxvverma1.graphit-viewerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graphit-viewer.app/Contents/MacOS/graphit-viewer";
+			};
+			name = Debug;
+		};
+		C4FDC4981C5EB41900F2D3B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "graphit-viewerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikhilnxvverma1.graphit-viewerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graphit-viewer.app/Contents/MacOS/graphit-viewer";
+			};
+			name = Release;
+		};
+		C4FDC49A1C5EB41900F2D3B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "graphit-viewerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikhilnxvverma1.graphit-viewerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "graphit-viewer";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C4FDC49B1C5EB41900F2D3B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "graphit-viewerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikhilnxvverma1.graphit-viewerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "graphit-viewer";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4FDC4641C5EB41900F2D3B1 /* Build configuration list for PBXProject "graphit-viewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4FDC4911C5EB41900F2D3B1 /* Debug */,
+				C4FDC4921C5EB41900F2D3B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4FDC4931C5EB41900F2D3B1 /* Build configuration list for PBXNativeTarget "graphit-viewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4FDC4941C5EB41900F2D3B1 /* Debug */,
+				C4FDC4951C5EB41900F2D3B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C4FDC4961C5EB41900F2D3B1 /* Build configuration list for PBXNativeTarget "graphit-viewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4FDC4971C5EB41900F2D3B1 /* Debug */,
+				C4FDC4981C5EB41900F2D3B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C4FDC4991C5EB41900F2D3B1 /* Build configuration list for PBXNativeTarget "graphit-viewerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4FDC49A1C5EB41900F2D3B1 /* Debug */,
+				C4FDC49B1C5EB41900F2D3B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C4FDC4611C5EB41900F2D3B1 /* Project object */;
+}
