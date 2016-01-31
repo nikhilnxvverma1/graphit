@@ -38,6 +38,10 @@
 		C4F54F7B1C5D6ACD0006224B /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F631C5D6ACD0006224B /* Color.m */; };
 		C4F54F7C1C5D6ACD0006224B /* PieValue+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F651C5D6ACD0006224B /* PieValue+CoreDataProperties.m */; };
 		C4F54F7D1C5D6ACD0006224B /* PieValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F671C5D6ACD0006224B /* PieValue.m */; };
+		C4FDC4071C5E0A7F00F2D3B1 /* MainSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC4061C5E0A7F00F2D3B1 /* MainSplitViewController.m */; };
+		C4FDC40A1C5E0E6800F2D3B1 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC4091C5E0E6800F2D3B1 /* MasterViewController.m */; };
+		C4FDC4121C5E0E9C00F2D3B1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC4111C5E0E9C00F2D3B1 /* DetailViewController.m */; };
+		C4FDC4171C5E16DC00F2D3B1 /* PieChartDiagramView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC4161C5E16DC00F2D3B1 /* PieChartDiagramView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +124,14 @@
 		C4F54F651C5D6ACD0006224B /* PieValue+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PieValue+CoreDataProperties.m"; sourceTree = "<group>"; };
 		C4F54F661C5D6ACD0006224B /* PieValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieValue.h; sourceTree = "<group>"; };
 		C4F54F671C5D6ACD0006224B /* PieValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieValue.m; sourceTree = "<group>"; };
+		C4FDC4051C5E0A7F00F2D3B1 /* MainSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSplitViewController.h; sourceTree = "<group>"; };
+		C4FDC4061C5E0A7F00F2D3B1 /* MainSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSplitViewController.m; sourceTree = "<group>"; };
+		C4FDC4081C5E0E6800F2D3B1 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		C4FDC4091C5E0E6800F2D3B1 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		C4FDC4101C5E0E9C00F2D3B1 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C4FDC4111C5E0E9C00F2D3B1 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C4FDC4151C5E16DC00F2D3B1 /* PieChartDiagramView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartDiagramView.h; sourceTree = "<group>"; };
+		C4FDC4161C5E16DC00F2D3B1 /* PieChartDiagramView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartDiagramView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +194,14 @@
 				C4F54F071C5D4CC30006224B /* graphit_mac.xcdatamodeld */,
 				C4F54F391C5D6A930006224B /* graphit.xcdatamodel */,
 				C4F54F011C5D4CC30006224B /* Supporting Files */,
+				C4FDC4051C5E0A7F00F2D3B1 /* MainSplitViewController.h */,
+				C4FDC4061C5E0A7F00F2D3B1 /* MainSplitViewController.m */,
+				C4FDC4081C5E0E6800F2D3B1 /* MasterViewController.h */,
+				C4FDC4091C5E0E6800F2D3B1 /* MasterViewController.m */,
+				C4FDC4101C5E0E9C00F2D3B1 /* DetailViewController.h */,
+				C4FDC4111C5E0E9C00F2D3B1 /* DetailViewController.m */,
+				C4FDC4151C5E16DC00F2D3B1 /* PieChartDiagramView.h */,
+				C4FDC4161C5E16DC00F2D3B1 /* PieChartDiagramView.m */,
 			);
 			path = "graphit-mac";
 			sourceTree = "<group>";
@@ -403,6 +423,8 @@
 				C4F54F7D1C5D6ACD0006224B /* PieValue.m in Sources */,
 				C4F54F7B1C5D6ACD0006224B /* Color.m in Sources */,
 				C4F54F6F1C5D6ACD0006224B /* Legend.m in Sources */,
+				C4FDC4121C5E0E9C00F2D3B1 /* DetailViewController.m in Sources */,
+				C4FDC4171C5E16DC00F2D3B1 /* PieChartDiagramView.m in Sources */,
 				C4F54F791C5D6ACD0006224B /* Document.m in Sources */,
 				C4F54F721C5D6ACD0006224B /* Graph+CoreDataProperties.m in Sources */,
 				C4F54F7C1C5D6ACD0006224B /* PieValue+CoreDataProperties.m in Sources */,
@@ -414,7 +436,9 @@
 				C4F54F6E1C5D6ACD0006224B /* Legend+CoreDataProperties.m in Sources */,
 				C4F54F6B1C5D6ACD0006224B /* BarCollection.m in Sources */,
 				C4F54F701C5D6ACD0006224B /* PieChart+CoreDataProperties.m in Sources */,
+				C4FDC4071C5E0A7F00F2D3B1 /* MainSplitViewController.m in Sources */,
 				C4F54F711C5D6ACD0006224B /* PieChart.m in Sources */,
+				C4FDC40A1C5E0E6800F2D3B1 /* MasterViewController.m in Sources */,
 				C4F54F001C5D4CC30006224B /* AppDelegate.m in Sources */,
 				C4F54F3A1C5D6A930006224B /* graphit.xcdatamodel in Sources */,
 				C4F54F681C5D6ACD0006224B /* Axis+CoreDataProperties.m in Sources */,
@@ -653,6 +677,7 @@
 				C4F54F2A1C5D4CC30006224B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4F54F2B1C5D4CC30006224B /* Build configuration list for PBXNativeTarget "graphit-macTests" */ = {
 			isa = XCConfigurationList;
@@ -661,6 +686,7 @@
 				C4F54F2D1C5D4CC30006224B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4F54F2E1C5D4CC30006224B /* Build configuration list for PBXNativeTarget "graphit-macUITests" */ = {
 			isa = XCConfigurationList;
@@ -669,6 +695,7 @@
 				C4F54F301C5D4CC30006224B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
