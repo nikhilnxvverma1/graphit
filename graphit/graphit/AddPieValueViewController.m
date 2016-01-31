@@ -35,6 +35,20 @@
     self.selectedColor=colors[0];
     [self.done setEnabled:[self validInput]];
     
+    [self underlineTextfield:self.name];
+    [self underlineTextfield:self.value];
+    [self.done setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+    
+}
+
+-(void)underlineTextfield:(UITextField *)textField{
+    CALayer *border = [CALayer layer];
+    CGFloat borderWidth = 2;
+    border.borderColor = [UIColor darkGrayColor].CGColor;
+    border.frame = CGRectMake(0, textField.frame.size.height - borderWidth, textField.frame.size.width, textField.frame.size.height);
+    border.borderWidth = borderWidth;
+    [textField.layer addSublayer:border];
+    textField.layer.masksToBounds = YES;
 }
 
 #pragma mark - Segues

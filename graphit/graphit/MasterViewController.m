@@ -19,15 +19,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
     [self loadDocuments];
     
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
+    self.navigationItem.leftBarButtonItem.tintColor=[UIColor whiteColor];
+    self.navigationItem.title=@"Graph It";
+    ((UITextField*)self.navigationItem.titleView).textColor=[UIColor whiteColor];
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    addButton.tintColor=[UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 

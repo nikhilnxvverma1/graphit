@@ -35,9 +35,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2a-Vi-nqh">
-                                <rect key="frame" x="285" y="555" width="30" height="30"/>
-                                <state key="normal" title="Add"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2a-Vi-nqh">
+                                <rect key="frame" x="210" y="550" width="180" height="30"/>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.57254901960000004" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="fJP-Jc-XK7" kind="presentation" identifier="addPieValue" id="2fT-3B-ws6"/>
                                 </connections>
@@ -47,7 +50,7 @@
                                 <subviews>
                                     <label clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
                                         <rect key="frame" x="179" y="62" width="224" height="17"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.87137643914473684" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" size="system"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -86,6 +89,7 @@
                             <constraint firstItem="Ssx-B4-WdN" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" id="XoC-0f-L8E"/>
                             <constraint firstItem="ppg-NK-NFA" firstAttribute="top" secondItem="Ssx-B4-WdN" secondAttribute="bottom" id="epV-n1-dfD"/>
                             <constraint firstItem="Ssx-B4-WdN" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="hEC-ro-6Lp"/>
+                            <constraint firstItem="A2a-Vi-nqh" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.3" id="toh-EO-UoE"/>
                             <constraint firstItem="ppg-NK-NFA" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="xIF-Ik-lNy"/>
                         </constraints>
                         <variation key="default">
@@ -97,9 +101,10 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="mOI-FS-AaM">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pie Chart" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="qKv-cu-mDJ">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pie Chart" placeholder="Title" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="qKv-cu-mDJ">
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             <connections>
@@ -131,23 +136,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVt-QL-gR2">
-                                <rect key="frame" x="452" y="545" width="37" height="30"/>
-                                <state key="normal" title="Done"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVt-QL-gR2">
+                                <rect key="frame" x="369" y="545" width="120" height="30"/>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.57254901960000004" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="dne-GV-5do" kind="unwind" identifier="submit" unwindAction="backFromPieValue:" id="L5z-HF-H08"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yan-nO-bd4">
-                                <rect key="frame" x="93" y="545" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yan-nO-bd4">
+                                <rect key="frame" x="93" y="545" width="120" height="30"/>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.57254901960000004" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="dne-GV-5do" kind="unwind" identifier="cancel" unwindAction="backFromPieValue:" id="bT8-Tv-2VG"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oNK-BU-uka">
                                 <rect key="frame" x="0.0" y="200" width="600" height="60"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96039300432424246" green="0.96039300432424246" blue="0.96039300432424246" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="paz-UH-oQz">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -176,8 +187,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oar-RG-2bj">
                                         <rect key="frame" x="180" y="3" width="420" height="174"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RvB-uf-IIA">
-                                                <rect key="frame" x="0.0" y="29" width="420" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RvB-uf-IIA">
+                                                <rect key="frame" x="0.0" y="36" width="420" height="17"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <connections>
@@ -185,8 +197,9 @@
                                                     <outlet property="delegate" destination="fJP-Jc-XK7" id="lzk-nJ-Hld"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ba-Hp-Jvi">
-                                                <rect key="frame" x="0.0" y="116" width="420" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ba-Hp-Jvi">
+                                                <rect key="frame" x="0.0" y="123" width="420" height="17"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
@@ -195,7 +208,6 @@
                                                 </connections>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="RvB-uf-IIA" firstAttribute="width" secondItem="Oar-RG-2bj" secondAttribute="width" id="5Rb-Fn-DQ0"/>
                                             <constraint firstItem="RvB-uf-IIA" firstAttribute="centerX" secondItem="Oar-RG-2bj" secondAttribute="centerX" id="9YS-y3-3oa"/>
@@ -206,7 +218,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="rqQ-4i-f7L" firstAttribute="width" secondItem="0QJ-3y-QPO" secondAttribute="height" multiplier="35:64" id="29b-da-E74"/>
                                     <constraint firstItem="Oar-RG-2bj" firstAttribute="centerY" secondItem="0QJ-3y-QPO" secondAttribute="centerY" id="6Nu-su-eVW"/>
@@ -239,15 +250,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0QJ-3y-QPO" firstAttribute="top" secondItem="6wb-gx-98n" secondAttribute="bottom" id="0Qc-wF-Tor"/>
+                            <constraint firstItem="jVt-QL-gR2" firstAttribute="centerX" secondItem="K19-3M-4pi" secondAttribute="centerX" multiplier="1.5" id="0zu-EC-hXd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jVt-QL-gR2" secondAttribute="trailing" constant="91" id="FSB-z7-ACC"/>
                             <constraint firstItem="0QJ-3y-QPO" firstAttribute="height" secondItem="K19-3M-4pi" secondAttribute="height" multiplier="0.2" id="FUO-h2-Oah"/>
                             <constraint firstItem="0QJ-3y-QPO" firstAttribute="top" secondItem="6wb-gx-98n" secondAttribute="bottom" id="GVZ-vH-ct4"/>
                             <constraint firstItem="oNK-BU-uka" firstAttribute="centerY" secondItem="K19-3M-4pi" secondAttribute="centerY" id="HU7-Jw-gwU"/>
                             <constraint firstItem="0QJ-3y-QPO" firstAttribute="centerX" secondItem="K19-3M-4pi" secondAttribute="centerX" id="LYg-zh-hSj"/>
+                            <constraint firstItem="Yan-nO-bd4" firstAttribute="width" secondItem="K19-3M-4pi" secondAttribute="width" multiplier="0.2" id="M1b-bd-DOb"/>
                             <constraint firstItem="0QJ-3y-QPO" firstAttribute="width" secondItem="K19-3M-4pi" secondAttribute="width" id="MRn-0H-cyL"/>
                             <constraint firstItem="Yan-nO-bd4" firstAttribute="leading" secondItem="K19-3M-4pi" secondAttribute="leadingMargin" constant="73" id="OQj-2H-gMP"/>
                             <constraint firstItem="Yan-nO-bd4" firstAttribute="baseline" secondItem="jVt-QL-gR2" secondAttribute="baseline" id="QHK-J6-H2M"/>
                             <constraint firstItem="oNK-BU-uka" firstAttribute="height" secondItem="K19-3M-4pi" secondAttribute="height" multiplier="0.1" id="SQT-iW-yCm"/>
+                            <constraint firstItem="Yan-nO-bd4" firstAttribute="centerX" secondItem="K19-3M-4pi" secondAttribute="centerX" multiplier="0.5" id="Srm-85-qyQ"/>
                             <constraint firstItem="0QJ-3y-QPO" firstAttribute="top" secondItem="6wb-gx-98n" secondAttribute="bottom" id="U0R-d2-L2S"/>
                             <constraint firstItem="oNK-BU-uka" firstAttribute="top" secondItem="0QJ-3y-QPO" secondAttribute="bottom" id="Wuu-hC-4Gu"/>
                             <constraint firstItem="oNK-BU-uka" firstAttribute="top" secondItem="0QJ-3y-QPO" secondAttribute="bottom" constant="10" id="YNI-Q9-hvo"/>
@@ -255,6 +269,8 @@
                             <constraint firstItem="oNK-BU-uka" firstAttribute="top" secondItem="0QJ-3y-QPO" secondAttribute="bottom" constant="108" id="iIL-cy-HER"/>
                             <constraint firstItem="0QJ-3y-QPO" firstAttribute="height" secondItem="K19-3M-4pi" secondAttribute="height" multiplier="0.3" id="pPR-eB-Gm8"/>
                             <constraint firstItem="oNK-BU-uka" firstAttribute="width" secondItem="K19-3M-4pi" secondAttribute="width" id="r9n-bo-evA"/>
+                            <constraint firstItem="jVt-QL-gR2" firstAttribute="leading" secondItem="Yan-nO-bd4" secondAttribute="trailing" constant="156" id="wmJ-xf-opK"/>
+                            <constraint firstItem="jVt-QL-gR2" firstAttribute="width" secondItem="K19-3M-4pi" secondAttribute="width" multiplier="0.2" id="xpD-Aa-SHG"/>
                             <constraint firstItem="0QJ-3y-QPO" firstAttribute="top" secondItem="6wb-gx-98n" secondAttribute="bottom" id="ypf-Xq-4cW"/>
                             <constraint firstItem="oNK-BU-uka" firstAttribute="centerX" secondItem="K19-3M-4pi" secondAttribute="centerX" id="yqa-iA-80L"/>
                             <constraint firstItem="oNK-BU-uka" firstAttribute="top" secondItem="0QJ-3y-QPO" secondAttribute="bottom" constant="-1" id="zAT-ER-Iq5"/>
@@ -269,6 +285,9 @@
                                 <exclude reference="YNI-Q9-hvo"/>
                                 <exclude reference="iIL-cy-HER"/>
                                 <exclude reference="zAT-ER-Iq5"/>
+                                <exclude reference="OQj-2H-gMP"/>
+                                <exclude reference="FSB-z7-ACC"/>
+                                <exclude reference="wmJ-xf-opK"/>
                             </mask>
                         </variation>
                     </view>
@@ -359,6 +378,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tll-UG-LXB"/>
+        <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
 </document>

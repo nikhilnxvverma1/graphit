@@ -39,6 +39,7 @@
     if (self.detailItem) {
         self.header.text =[self.detailItem valueForKey:@"title"];
     }
+    self.navigationItem.leftBarButtonItem.tintColor=[UIColor whiteColor];
 }
 
 - (void)viewDidLoad {
@@ -48,12 +49,15 @@
     self.pieChartView.pieValueDescription=self.detailDescriptionLabel;
     self.legendTable.delegate=self;
     self.legendTable.dataSource=self;
+
 //    self.header.delegate=self;
     [self.header addTarget:self
                     action:@selector(dismissKeyboard:)
           forControlEvents:UIControlEventEditingDidEndOnExit];
     [self stringFromModel:self.detailItem];
     [self.pieChartView setModel:self.detailItem];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -180,7 +184,7 @@
 //    UIGraphicsBeginImageContextWithOptions(CGSizeMake(36, 36), YES, 0.0);
 //    UIImage *blank = UIGraphicsGetImageFromCurrentImageContext();
 //    UIGraphicsEndImageContext();
-    
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     cell.imageView.image = [UIImage imageNamed:@"white_square.png"];
     cell.imageView.image=[cell.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     Color *color=object.legend.legendColor;
