@@ -1,0 +1,689 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C4F54F001C5D4CC30006224B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54EFF1C5D4CC30006224B /* AppDelegate.m */; };
+		C4F54F031C5D4CC30006224B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F021C5D4CC30006224B /* main.m */; };
+		C4F54F061C5D4CC30006224B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F051C5D4CC30006224B /* ViewController.m */; };
+		C4F54F091C5D4CC30006224B /* graphit_mac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F071C5D4CC30006224B /* graphit_mac.xcdatamodeld */; };
+		C4F54F0B1C5D4CC30006224B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4F54F0A1C5D4CC30006224B /* Assets.xcassets */; };
+		C4F54F0E1C5D4CC30006224B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F54F0C1C5D4CC30006224B /* Main.storyboard */; };
+		C4F54F191C5D4CC30006224B /* graphit_macTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F181C5D4CC30006224B /* graphit_macTests.m */; };
+		C4F54F241C5D4CC30006224B /* graphit_macUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F231C5D4CC30006224B /* graphit_macUITests.m */; };
+		C4F54F3A1C5D6A930006224B /* graphit.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F391C5D6A930006224B /* graphit.xcdatamodel */; };
+		C4F54F681C5D6ACD0006224B /* Axis+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F3D1C5D6ACD0006224B /* Axis+CoreDataProperties.m */; };
+		C4F54F691C5D6ACD0006224B /* Axis.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F3F1C5D6ACD0006224B /* Axis.m */; };
+		C4F54F6A1C5D6ACD0006224B /* BarCollection+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F411C5D6ACD0006224B /* BarCollection+CoreDataProperties.m */; };
+		C4F54F6B1C5D6ACD0006224B /* BarCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F431C5D6ACD0006224B /* BarCollection.m */; };
+		C4F54F6C1C5D6ACD0006224B /* DataPoint+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F451C5D6ACD0006224B /* DataPoint+CoreDataProperties.m */; };
+		C4F54F6D1C5D6ACD0006224B /* DataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F471C5D6ACD0006224B /* DataPoint.m */; };
+		C4F54F6E1C5D6ACD0006224B /* Legend+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F491C5D6ACD0006224B /* Legend+CoreDataProperties.m */; };
+		C4F54F6F1C5D6ACD0006224B /* Legend.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F4B1C5D6ACD0006224B /* Legend.m */; };
+		C4F54F701C5D6ACD0006224B /* PieChart+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F4D1C5D6ACD0006224B /* PieChart+CoreDataProperties.m */; };
+		C4F54F711C5D6ACD0006224B /* PieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F4F1C5D6ACD0006224B /* PieChart.m */; };
+		C4F54F721C5D6ACD0006224B /* Graph+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F511C5D6ACD0006224B /* Graph+CoreDataProperties.m */; };
+		C4F54F731C5D6ACD0006224B /* Graph.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F531C5D6ACD0006224B /* Graph.m */; };
+		C4F54F741C5D6ACD0006224B /* BarGraph+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F551C5D6ACD0006224B /* BarGraph+CoreDataProperties.m */; };
+		C4F54F751C5D6ACD0006224B /* BarGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F571C5D6ACD0006224B /* BarGraph.m */; };
+		C4F54F761C5D6ACD0006224B /* BarValue+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F591C5D6ACD0006224B /* BarValue+CoreDataProperties.m */; };
+		C4F54F771C5D6ACD0006224B /* BarValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F5B1C5D6ACD0006224B /* BarValue.m */; };
+		C4F54F781C5D6ACD0006224B /* Document+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F5D1C5D6ACD0006224B /* Document+CoreDataProperties.m */; };
+		C4F54F791C5D6ACD0006224B /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F5F1C5D6ACD0006224B /* Document.m */; };
+		C4F54F7A1C5D6ACD0006224B /* Color+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F611C5D6ACD0006224B /* Color+CoreDataProperties.m */; };
+		C4F54F7B1C5D6ACD0006224B /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F631C5D6ACD0006224B /* Color.m */; };
+		C4F54F7C1C5D6ACD0006224B /* PieValue+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F651C5D6ACD0006224B /* PieValue+CoreDataProperties.m */; };
+		C4F54F7D1C5D6ACD0006224B /* PieValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F54F671C5D6ACD0006224B /* PieValue.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4F54F151C5D4CC30006224B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4F54EF31C5D4CC30006224B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4F54EFA1C5D4CC30006224B;
+			remoteInfo = "graphit-mac";
+		};
+		C4F54F201C5D4CC30006224B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4F54EF31C5D4CC30006224B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4F54EFA1C5D4CC30006224B;
+			remoteInfo = "graphit-mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C4F54EFB1C5D4CC30006224B /* graphit-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "graphit-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4F54EFE1C5D4CC30006224B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C4F54EFF1C5D4CC30006224B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C4F54F021C5D4CC30006224B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C4F54F041C5D4CC30006224B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C4F54F051C5D4CC30006224B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C4F54F081C5D4CC30006224B /* graphit_mac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = graphit_mac.xcdatamodel; sourceTree = "<group>"; };
+		C4F54F0A1C5D4CC30006224B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4F54F0D1C5D4CC30006224B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C4F54F0F1C5D4CC30006224B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4F54F141C5D4CC30006224B /* graphit-macTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "graphit-macTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4F54F181C5D4CC30006224B /* graphit_macTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = graphit_macTests.m; sourceTree = "<group>"; };
+		C4F54F1A1C5D4CC30006224B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4F54F1F1C5D4CC30006224B /* graphit-macUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "graphit-macUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4F54F231C5D4CC30006224B /* graphit_macUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = graphit_macUITests.m; sourceTree = "<group>"; };
+		C4F54F251C5D4CC30006224B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4F54F381C5D68ED0006224B /* graphit-mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "graphit-mac.entitlements"; sourceTree = "<group>"; };
+		C4F54F391C5D6A930006224B /* graphit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = graphit.xcdatamodel; sourceTree = "<group>"; };
+		C4F54F3C1C5D6ACD0006224B /* Axis+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Axis+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C4F54F3D1C5D6ACD0006224B /* Axis+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Axis+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C4F54F3E1C5D6ACD0006224B /* Axis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Axis.h; sourceTree = "<group>"; };
+		C4F54F3F1C5D6ACD0006224B /* Axis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Axis.m; sourceTree = "<group>"; };
+		C4F54F401C5D6ACD0006224B /* BarCollection+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BarCollection+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C4F54F411C5D6ACD0006224B /* BarCollection+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BarCollection+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C4F54F421C5D6ACD0006224B /* BarCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCollection.h; sourceTree = "<group>"; };
+		C4F54F431C5D6ACD0006224B /* BarCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCollection.m; sourceTree = "<group>"; };
+		C4F54F441C5D6ACD0006224B /* DataPoint+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataPoint+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C4F54F451C5D6ACD0006224B /* DataPoint+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataPoint+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C4F54F461C5D6ACD0006224B /* DataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPoint.h; sourceTree = "<group>"; };
+		C4F54F471C5D6ACD0006224B /* DataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPoint.m; sourceTree = "<group>"; };
+		C4F54F481C5D6ACD0006224B /* Legend+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Legend+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C4F54F491C5D6ACD0006224B /* Legend+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Legend+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C4F54F4A1C5D6ACD0006224B /* Legend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Legend.h; sourceTree = "<group>"; };
+		C4F54F4B1C5D6ACD0006224B /* Legend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Legend.m; sourceTree = "<group>"; };
+		C4F54F4C1C5D6ACD0006224B /* PieChart+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PieChart+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C4F54F4D1C5D6ACD0006224B /* PieChart+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PieChart+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C4F54F4E1C5D6ACD0006224B /* PieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChart.h; sourceTree = "<group>"; };
+		C4F54F4F1C5D6ACD0006224B /* PieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChart.m; sourceTree = "<group>"; };
+		C4F54F501C5D6ACD0006224B /* Graph+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Graph+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C4F54F511C5D6ACD0006224B /* Graph+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Graph+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C4F54F521C5D6ACD0006224B /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		C4F54F531C5D6ACD0006224B /* Graph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph.m; sourceTree = "<group>"; };
+		C4F54F541C5D6ACD0006224B /* BarGraph+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BarGraph+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C4F54F551C5D6ACD0006224B /* BarGraph+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BarGraph+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C4F54F561C5D6ACD0006224B /* BarGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarGraph.h; sourceTree = "<group>"; };
+		C4F54F571C5D6ACD0006224B /* BarGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarGraph.m; sourceTree = "<group>"; };
+		C4F54F581C5D6ACD0006224B /* BarValue+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BarValue+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C4F54F591C5D6ACD0006224B /* BarValue+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BarValue+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C4F54F5A1C5D6ACD0006224B /* BarValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarValue.h; sourceTree = "<group>"; };
+		C4F54F5B1C5D6ACD0006224B /* BarValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarValue.m; sourceTree = "<group>"; };
+		C4F54F5C1C5D6ACD0006224B /* Document+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Document+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C4F54F5D1C5D6ACD0006224B /* Document+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Document+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C4F54F5E1C5D6ACD0006224B /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		C4F54F5F1C5D6ACD0006224B /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		C4F54F601C5D6ACD0006224B /* Color+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Color+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C4F54F611C5D6ACD0006224B /* Color+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Color+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C4F54F621C5D6ACD0006224B /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		C4F54F631C5D6ACD0006224B /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
+		C4F54F641C5D6ACD0006224B /* PieValue+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PieValue+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C4F54F651C5D6ACD0006224B /* PieValue+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PieValue+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C4F54F661C5D6ACD0006224B /* PieValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieValue.h; sourceTree = "<group>"; };
+		C4F54F671C5D6ACD0006224B /* PieValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieValue.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4F54EF81C5D4CC30006224B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4F54F111C5D4CC30006224B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4F54F1C1C5D4CC30006224B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C4F54EF21C5D4CC30006224B = {
+			isa = PBXGroup;
+			children = (
+				C4F54EFD1C5D4CC30006224B /* graphit-mac */,
+				C4F54F171C5D4CC30006224B /* graphit-macTests */,
+				C4F54F221C5D4CC30006224B /* graphit-macUITests */,
+				C4F54EFC1C5D4CC30006224B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4F54EFC1C5D4CC30006224B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4F54EFB1C5D4CC30006224B /* graphit-mac.app */,
+				C4F54F141C5D4CC30006224B /* graphit-macTests.xctest */,
+				C4F54F1F1C5D4CC30006224B /* graphit-macUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4F54EFD1C5D4CC30006224B /* graphit-mac */ = {
+			isa = PBXGroup;
+			children = (
+				C4F54F3B1C5D6ABA0006224B /* Model */,
+				C4F54F381C5D68ED0006224B /* graphit-mac.entitlements */,
+				C4F54EFE1C5D4CC30006224B /* AppDelegate.h */,
+				C4F54EFF1C5D4CC30006224B /* AppDelegate.m */,
+				C4F54F041C5D4CC30006224B /* ViewController.h */,
+				C4F54F051C5D4CC30006224B /* ViewController.m */,
+				C4F54F0A1C5D4CC30006224B /* Assets.xcassets */,
+				C4F54F0C1C5D4CC30006224B /* Main.storyboard */,
+				C4F54F0F1C5D4CC30006224B /* Info.plist */,
+				C4F54F071C5D4CC30006224B /* graphit_mac.xcdatamodeld */,
+				C4F54F391C5D6A930006224B /* graphit.xcdatamodel */,
+				C4F54F011C5D4CC30006224B /* Supporting Files */,
+			);
+			path = "graphit-mac";
+			sourceTree = "<group>";
+		};
+		C4F54F011C5D4CC30006224B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4F54F021C5D4CC30006224B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4F54F171C5D4CC30006224B /* graphit-macTests */ = {
+			isa = PBXGroup;
+			children = (
+				C4F54F181C5D4CC30006224B /* graphit_macTests.m */,
+				C4F54F1A1C5D4CC30006224B /* Info.plist */,
+			);
+			path = "graphit-macTests";
+			sourceTree = "<group>";
+		};
+		C4F54F221C5D4CC30006224B /* graphit-macUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C4F54F231C5D4CC30006224B /* graphit_macUITests.m */,
+				C4F54F251C5D4CC30006224B /* Info.plist */,
+			);
+			path = "graphit-macUITests";
+			sourceTree = "<group>";
+		};
+		C4F54F3B1C5D6ABA0006224B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4F54F3C1C5D6ACD0006224B /* Axis+CoreDataProperties.h */,
+				C4F54F3D1C5D6ACD0006224B /* Axis+CoreDataProperties.m */,
+				C4F54F3E1C5D6ACD0006224B /* Axis.h */,
+				C4F54F3F1C5D6ACD0006224B /* Axis.m */,
+				C4F54F401C5D6ACD0006224B /* BarCollection+CoreDataProperties.h */,
+				C4F54F411C5D6ACD0006224B /* BarCollection+CoreDataProperties.m */,
+				C4F54F421C5D6ACD0006224B /* BarCollection.h */,
+				C4F54F431C5D6ACD0006224B /* BarCollection.m */,
+				C4F54F441C5D6ACD0006224B /* DataPoint+CoreDataProperties.h */,
+				C4F54F451C5D6ACD0006224B /* DataPoint+CoreDataProperties.m */,
+				C4F54F461C5D6ACD0006224B /* DataPoint.h */,
+				C4F54F471C5D6ACD0006224B /* DataPoint.m */,
+				C4F54F481C5D6ACD0006224B /* Legend+CoreDataProperties.h */,
+				C4F54F491C5D6ACD0006224B /* Legend+CoreDataProperties.m */,
+				C4F54F4A1C5D6ACD0006224B /* Legend.h */,
+				C4F54F4B1C5D6ACD0006224B /* Legend.m */,
+				C4F54F4C1C5D6ACD0006224B /* PieChart+CoreDataProperties.h */,
+				C4F54F4D1C5D6ACD0006224B /* PieChart+CoreDataProperties.m */,
+				C4F54F4E1C5D6ACD0006224B /* PieChart.h */,
+				C4F54F4F1C5D6ACD0006224B /* PieChart.m */,
+				C4F54F501C5D6ACD0006224B /* Graph+CoreDataProperties.h */,
+				C4F54F511C5D6ACD0006224B /* Graph+CoreDataProperties.m */,
+				C4F54F521C5D6ACD0006224B /* Graph.h */,
+				C4F54F531C5D6ACD0006224B /* Graph.m */,
+				C4F54F541C5D6ACD0006224B /* BarGraph+CoreDataProperties.h */,
+				C4F54F551C5D6ACD0006224B /* BarGraph+CoreDataProperties.m */,
+				C4F54F561C5D6ACD0006224B /* BarGraph.h */,
+				C4F54F571C5D6ACD0006224B /* BarGraph.m */,
+				C4F54F581C5D6ACD0006224B /* BarValue+CoreDataProperties.h */,
+				C4F54F591C5D6ACD0006224B /* BarValue+CoreDataProperties.m */,
+				C4F54F5A1C5D6ACD0006224B /* BarValue.h */,
+				C4F54F5B1C5D6ACD0006224B /* BarValue.m */,
+				C4F54F5C1C5D6ACD0006224B /* Document+CoreDataProperties.h */,
+				C4F54F5D1C5D6ACD0006224B /* Document+CoreDataProperties.m */,
+				C4F54F5E1C5D6ACD0006224B /* Document.h */,
+				C4F54F5F1C5D6ACD0006224B /* Document.m */,
+				C4F54F601C5D6ACD0006224B /* Color+CoreDataProperties.h */,
+				C4F54F611C5D6ACD0006224B /* Color+CoreDataProperties.m */,
+				C4F54F621C5D6ACD0006224B /* Color.h */,
+				C4F54F631C5D6ACD0006224B /* Color.m */,
+				C4F54F641C5D6ACD0006224B /* PieValue+CoreDataProperties.h */,
+				C4F54F651C5D6ACD0006224B /* PieValue+CoreDataProperties.m */,
+				C4F54F661C5D6ACD0006224B /* PieValue.h */,
+				C4F54F671C5D6ACD0006224B /* PieValue.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C4F54EFA1C5D4CC30006224B /* graphit-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4F54F281C5D4CC30006224B /* Build configuration list for PBXNativeTarget "graphit-mac" */;
+			buildPhases = (
+				C4F54EF71C5D4CC30006224B /* Sources */,
+				C4F54EF81C5D4CC30006224B /* Frameworks */,
+				C4F54EF91C5D4CC30006224B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "graphit-mac";
+			productName = "graphit-mac";
+			productReference = C4F54EFB1C5D4CC30006224B /* graphit-mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C4F54F131C5D4CC30006224B /* graphit-macTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4F54F2B1C5D4CC30006224B /* Build configuration list for PBXNativeTarget "graphit-macTests" */;
+			buildPhases = (
+				C4F54F101C5D4CC30006224B /* Sources */,
+				C4F54F111C5D4CC30006224B /* Frameworks */,
+				C4F54F121C5D4CC30006224B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4F54F161C5D4CC30006224B /* PBXTargetDependency */,
+			);
+			name = "graphit-macTests";
+			productName = "graphit-macTests";
+			productReference = C4F54F141C5D4CC30006224B /* graphit-macTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C4F54F1E1C5D4CC30006224B /* graphit-macUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4F54F2E1C5D4CC30006224B /* Build configuration list for PBXNativeTarget "graphit-macUITests" */;
+			buildPhases = (
+				C4F54F1B1C5D4CC30006224B /* Sources */,
+				C4F54F1C1C5D4CC30006224B /* Frameworks */,
+				C4F54F1D1C5D4CC30006224B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4F54F211C5D4CC30006224B /* PBXTargetDependency */,
+			);
+			name = "graphit-macUITests";
+			productName = "graphit-macUITests";
+			productReference = C4F54F1F1C5D4CC30006224B /* graphit-macUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4F54EF31C5D4CC30006224B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Nikhil Verma";
+				TargetAttributes = {
+					C4F54EFA1C5D4CC30006224B = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = Y6J332URJM;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					C4F54F131C5D4CC30006224B = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = C4F54EFA1C5D4CC30006224B;
+					};
+					C4F54F1E1C5D4CC30006224B = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = C4F54EFA1C5D4CC30006224B;
+					};
+				};
+			};
+			buildConfigurationList = C4F54EF61C5D4CC30006224B /* Build configuration list for PBXProject "graphit-mac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C4F54EF21C5D4CC30006224B;
+			productRefGroup = C4F54EFC1C5D4CC30006224B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4F54EFA1C5D4CC30006224B /* graphit-mac */,
+				C4F54F131C5D4CC30006224B /* graphit-macTests */,
+				C4F54F1E1C5D4CC30006224B /* graphit-macUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4F54EF91C5D4CC30006224B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4F54F0B1C5D4CC30006224B /* Assets.xcassets in Resources */,
+				C4F54F0E1C5D4CC30006224B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4F54F121C5D4CC30006224B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4F54F1D1C5D4CC30006224B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4F54EF71C5D4CC30006224B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4F54F741C5D6ACD0006224B /* BarGraph+CoreDataProperties.m in Sources */,
+				C4F54F6C1C5D6ACD0006224B /* DataPoint+CoreDataProperties.m in Sources */,
+				C4F54F7D1C5D6ACD0006224B /* PieValue.m in Sources */,
+				C4F54F7B1C5D6ACD0006224B /* Color.m in Sources */,
+				C4F54F6F1C5D6ACD0006224B /* Legend.m in Sources */,
+				C4F54F791C5D6ACD0006224B /* Document.m in Sources */,
+				C4F54F721C5D6ACD0006224B /* Graph+CoreDataProperties.m in Sources */,
+				C4F54F7C1C5D6ACD0006224B /* PieValue+CoreDataProperties.m in Sources */,
+				C4F54F061C5D4CC30006224B /* ViewController.m in Sources */,
+				C4F54F761C5D6ACD0006224B /* BarValue+CoreDataProperties.m in Sources */,
+				C4F54F7A1C5D6ACD0006224B /* Color+CoreDataProperties.m in Sources */,
+				C4F54F6D1C5D6ACD0006224B /* DataPoint.m in Sources */,
+				C4F54F031C5D4CC30006224B /* main.m in Sources */,
+				C4F54F6E1C5D6ACD0006224B /* Legend+CoreDataProperties.m in Sources */,
+				C4F54F6B1C5D6ACD0006224B /* BarCollection.m in Sources */,
+				C4F54F701C5D6ACD0006224B /* PieChart+CoreDataProperties.m in Sources */,
+				C4F54F711C5D6ACD0006224B /* PieChart.m in Sources */,
+				C4F54F001C5D4CC30006224B /* AppDelegate.m in Sources */,
+				C4F54F3A1C5D6A930006224B /* graphit.xcdatamodel in Sources */,
+				C4F54F681C5D6ACD0006224B /* Axis+CoreDataProperties.m in Sources */,
+				C4F54F6A1C5D6ACD0006224B /* BarCollection+CoreDataProperties.m in Sources */,
+				C4F54F781C5D6ACD0006224B /* Document+CoreDataProperties.m in Sources */,
+				C4F54F091C5D4CC30006224B /* graphit_mac.xcdatamodeld in Sources */,
+				C4F54F731C5D6ACD0006224B /* Graph.m in Sources */,
+				C4F54F691C5D6ACD0006224B /* Axis.m in Sources */,
+				C4F54F751C5D6ACD0006224B /* BarGraph.m in Sources */,
+				C4F54F771C5D6ACD0006224B /* BarValue.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4F54F101C5D4CC30006224B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4F54F191C5D4CC30006224B /* graphit_macTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4F54F1B1C5D4CC30006224B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4F54F241C5D4CC30006224B /* graphit_macUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4F54F161C5D4CC30006224B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4F54EFA1C5D4CC30006224B /* graphit-mac */;
+			targetProxy = C4F54F151C5D4CC30006224B /* PBXContainerItemProxy */;
+		};
+		C4F54F211C5D4CC30006224B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4F54EFA1C5D4CC30006224B /* graphit-mac */;
+			targetProxy = C4F54F201C5D4CC30006224B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C4F54F0C1C5D4CC30006224B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4F54F0D1C5D4CC30006224B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C4F54F261C5D4CC30006224B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C4F54F271C5D4CC30006224B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C4F54F291C5D4CC30006224B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "graphit-mac/graphit-mac.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "graphit-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikhilnxvverma1.graphit-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		C4F54F2A1C5D4CC30006224B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "graphit-mac/graphit-mac.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "graphit-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikhilnxvverma1.graphit-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		C4F54F2C1C5D4CC30006224B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "graphit-macTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikhilnxvverma1.graphit-macTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graphit-mac.app/Contents/MacOS/graphit-mac";
+			};
+			name = Debug;
+		};
+		C4F54F2D1C5D4CC30006224B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "graphit-macTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikhilnxvverma1.graphit-macTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graphit-mac.app/Contents/MacOS/graphit-mac";
+			};
+			name = Release;
+		};
+		C4F54F2F1C5D4CC30006224B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "graphit-macUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikhilnxvverma1.graphit-macUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "graphit-mac";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C4F54F301C5D4CC30006224B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "graphit-macUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikhilnxvverma1.graphit-macUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "graphit-mac";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4F54EF61C5D4CC30006224B /* Build configuration list for PBXProject "graphit-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4F54F261C5D4CC30006224B /* Debug */,
+				C4F54F271C5D4CC30006224B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4F54F281C5D4CC30006224B /* Build configuration list for PBXNativeTarget "graphit-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4F54F291C5D4CC30006224B /* Debug */,
+				C4F54F2A1C5D4CC30006224B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C4F54F2B1C5D4CC30006224B /* Build configuration list for PBXNativeTarget "graphit-macTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4F54F2C1C5D4CC30006224B /* Debug */,
+				C4F54F2D1C5D4CC30006224B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C4F54F2E1C5D4CC30006224B /* Build configuration list for PBXNativeTarget "graphit-macUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4F54F2F1C5D4CC30006224B /* Debug */,
+				C4F54F301C5D4CC30006224B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C4F54F071C5D4CC30006224B /* graphit_mac.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C4F54F081C5D4CC30006224B /* graphit_mac.xcdatamodel */,
+			);
+			currentVersion = C4F54F081C5D4CC30006224B /* graphit_mac.xcdatamodel */;
+			path = graphit_mac.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C4F54EF31C5D4CC30006224B /* Project object */;
+}

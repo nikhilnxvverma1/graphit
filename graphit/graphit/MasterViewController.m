@@ -17,6 +17,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //enable push notifications for data
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:NSPersistentStoreCoordinatorStoresWillChangeNotification
+     object:self.managedObjectContext.persistentStoreCoordinator
+     queue:[NSOperationQueue mainQueue]
+     usingBlock:^(NSNotification *note) {
+        
+         [self.managedObjectContext performBlock:^{
+            
+             if([self.managedObjectContext hasChanges]){
+                 NSError *saveError;
+                 if(![self.managedObjectContext save:&saveError]){
+                     NSLog(@"Save Error %@",saveError);
+                 }
+             }else{
+                 [self.managedObjectContext reset];
+             }
+            
+//             [self.managedObjectContext reset];
+             NSLog(@"NOTIFICATION: insde perform block00");
+         }];
+         // drop any managed object references
+         // disable user interface with setEnabled: or an overlay
+         NSLog(@"Store will be changing");
+     }];
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:NSPersistentStoreCoordinatorStoresDidChangeNotification
+     object:self.managedObjectContext.persistentStoreCoordinator
+     queue:[NSOperationQueue mainQueue]
+     usingBlock:^(NSNotification *note) {
+         NSLog(@"Store has changed");
+         [self.managedObjectContext performBlock:^{
+             [self.managedObjectContext reset];
+             NSLog(@"NOTIFICATION: insde perform block");
+         }];
+         // drop any managed object references
+         // disable user interface with setEnabled: or an overlay
+//             NSLog(@"Store has changed");
+     }];
+    
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 

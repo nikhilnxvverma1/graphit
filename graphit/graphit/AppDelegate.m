@@ -99,7 +99,6 @@
         
         NSError *err;
         NSUInteger count = [self.managedObjectContext countForFetchRequest:request error:&err];
-        NSLog(@"Count of colors in DB %lu",(unsigned long)count);
         if(count == NSNotFound) {
             //Handle error
             abort();
@@ -157,11 +156,40 @@
     
     // Create the coordinator and store
     
+    NSFileManager* fileManager=[NSFileManager defaultManager];
+    NSString *teamId=@"iCloud";
+    NSString *bundlID=[[NSBundle mainBundle] bundleIdentifier];
+    NSString *cloudRoot=[NSString stringWithFormat:@"%@.%@",teamId,bundlID];
+    NSURL *cloudURL=[fileManager URLForUbiquityContainerIdentifier:cloudRoot];
+    NSString *pathToCloudUrl=[[cloudURL path] stringByAppendingPathComponent:@"GraphItStore"];
+    NSURL *cloudPath=[NSURL fileURLWithPath:pathToCloudUrl];
+    
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"graphit.sqlite"];
     NSError *error = nil;
+    NSDictionary *storeOptions =@{NSPersistentStoreUbiquitousContentNameKey: @"GraphItStore",NSPersistentStoreUbiquitousContentURLKey:cloudPath};
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    
+    //register for the notifications beforehand
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:NSPersistentStoreCoordinatorStoresDidChangeNotification
+     object:self.managedObjectContext.persistentStoreCoordinator
+     queue:[NSOperationQueue mainQueue]
+     usingBlock:^(NSNotification *note) {
+         NSLog(@"Came outer");
+         [self.managedObjectContext performBlock:^{
+                      NSLog(@"Came inner");
+             [self.managedObjectContext reset];
+         }];
+         // drop any managed object references
+         // disable user interface with setEnabled: or an overlay
+         NSLog(@"Store has changed");
+     }];
+    
+
+    
+    NSPersistentStore *store=[_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:storeOptions error:&error];
+    if (!store) {
         // Report any error we got.
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
@@ -173,6 +201,7 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    NSLog(@"Store URL: %@",[store URL]);
     
     return _persistentStoreCoordinator;
 }
