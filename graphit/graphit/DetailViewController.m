@@ -429,6 +429,12 @@
 }
 
 -(void)updateDocument{
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        self.document.noteContent = [self stringFromModel:self.detailItem];
+//        [self.document updateChangeCount:UIDocumentChangeDone];
+////        [doc updateChangeCount:UIDocumentChangeDone];
+//    });
+
     self.document.noteContent = [self stringFromModel:self.detailItem];
     [self.document updateChangeCount:UIDocumentChangeDone];
 }
