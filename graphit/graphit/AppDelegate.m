@@ -171,18 +171,18 @@
     
     // Create the coordinator and store
     
-    NSFileManager* fileManager=[NSFileManager defaultManager];
-    NSString *teamId=@"iCloud";
-    NSString *bundlID=[[NSBundle mainBundle] bundleIdentifier];
-    NSString *cloudRoot=[NSString stringWithFormat:@"%@.%@",teamId,bundlID];
-    NSURL *cloudURL=[fileManager URLForUbiquityContainerIdentifier:cloudRoot];
-    NSString *pathToCloudUrl=[[cloudURL path] stringByAppendingPathComponent:@"GraphItStore"];
-    NSURL *cloudPath=[NSURL fileURLWithPath:pathToCloudUrl];
-    
+//    NSFileManager* fileManager=[NSFileManager defaultManager];
+//    NSString *teamId=@"iCloud";
+//    NSString *bundlID=[[NSBundle mainBundle] bundleIdentifier];
+//    NSString *cloudRoot=[NSString stringWithFormat:@"%@.%@",teamId,bundlID];
+//    NSURL *cloudURL=[fileManager URLForUbiquityContainerIdentifier:cloudRoot];
+//    NSString *pathToCloudUrl=[[cloudURL path] stringByAppendingPathComponent:@"GraphItStore"];
+//    NSURL *cloudPath=[NSURL fileURLWithPath:pathToCloudUrl];
+    //    NSDictionary *storeOptions =@{NSPersistentStoreUbiquitousContentNameKey: @"GraphItStore",NSPersistentStoreUbiquitousContentURLKey:cloudPath};
+
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"graphit.sqlite"];
     NSError *error = nil;
-    NSDictionary *storeOptions =@{NSPersistentStoreUbiquitousContentNameKey: @"GraphItStore",NSPersistentStoreUbiquitousContentURLKey:cloudPath};
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     
     //register for the notifications beforehand

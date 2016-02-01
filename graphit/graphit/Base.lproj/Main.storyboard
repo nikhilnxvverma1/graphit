@@ -48,11 +48,18 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ssx-B4-WdN" customClass="PieChartView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="299"/>
                                 <subviews>
-                                    <label clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
+                                    <label clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
                                         <rect key="frame" x="179" y="62" width="224" height="17"/>
                                         <color key="backgroundColor" white="0.87137643914473684" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" size="system"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Detail view content goes here">
+                                                <attributes>
+                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

@@ -57,8 +57,15 @@
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     NSDate *date=[NSDate date];
     [pieChart setValue:date forKey:@"timeStamp"];
-    [pieChart setValue:[date description] forKey:@"title"];
-    [self addPieChartDocument:date];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"hh:mm"];
+    
+    NSString *fileName = [NSString stringWithFormat:@"PieChart (%@)",
+                          [formatter stringFromDate:[NSDate date]]];
+    
+    [pieChart setValue:fileName forKey:@"title"];
+    [self addPieChartDocument:date :pieChart];
     
     // Save the context.
     NSError *error = nil;
@@ -70,7 +77,7 @@
     }
 }
 
--(void)addPieChartDocument:(NSDate*)date{
+-(void)addPieChartDocument:(NSDate*)date :(PieChart*)pieChart{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMdd_hhmmss"];
     
@@ -82,7 +89,7 @@
                                 URLByAppendingPathComponent:fileName];
     
     PieChartDocument *doc = [[PieChartDocument alloc] initWithFileURL:ubiquitousPackage];
-    
+    doc.noteContent=pieChart.title;
     [doc saveToURL:[doc fileURL] forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
         
         if (success) {
@@ -171,6 +178,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object =[[self fetchedResultsController] objectAtIndexPath:indexPath];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+        NSLog(@"title %@",((PieChart*)object).title);
         [controller setDetailItem:(PieChart*)object];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
@@ -201,9 +209,19 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        PieChart* toDelete=(PieChart*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyyMMdd_hhmmss"];
+        
+        NSString *fileName = [NSString stringWithFormat:@"PieChart_%@",
+                              [formatter stringFromDate:toDelete.timeStamp]];
+        
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-            
+
+        
         NSError *error = nil;
         if (![context save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
@@ -211,6 +229,12 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
+        //TODO remove document from iCloud
+        
+        NSURL *ubiq = [[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:nil];
+        NSURL *ubiquitousPackage = [[ubiq URLByAppendingPathComponent:@"Documents"] URLByAppendingPathComponent:fileName];
+        NSFileManager *filemgr = [NSFileManager defaultManager];
+        [filemgr removeItemAtURL:ubiquitousPackage error:nil];
     }
 }
 

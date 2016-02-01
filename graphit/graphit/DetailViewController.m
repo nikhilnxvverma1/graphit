@@ -246,7 +246,7 @@
     }else{
         AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
         [delegate.managedObjectContext deleteObject:object];
-        [self.pieChartView setNeedsDisplay];
+        [self.pieChartView setNeedsDisplay];//TODO register a notification
         //we will modify the document and save it to iCloud
         [self updateDocument];
     }
@@ -279,6 +279,9 @@
     // Edit the entity name as appropriate.
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"PieValue" inManagedObjectContext:delegate.managedObjectContext];
     [fetchRequest setEntity:entity];
+    [NSFetchedResultsController deleteCacheWithName:@"PieValues"];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"pieChart = %@", self.detailItem];
+    fetchRequest.predicate = pred;
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
