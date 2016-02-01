@@ -22,39 +22,10 @@
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     
-    PieChart *pieChart=[[PieChart alloc] init];
-    pieChart.title=@"Sports";
-    PieValue *p11=[[PieValue alloc] init];
-    p11.r=0.1;
-    p11.g=0.4;
-    p11.b=0.2;
-    p11.a=1;
-    p11.name=@"Football";
-    p11.value=@13;
-    [pieChart addPieValue:p11];
-    
-    PieValue *p12=[[PieValue alloc] init];
-    p12.r=0.9;
-    p12.g=0.3;
-    p12.b=0.8;
-    p12.a=1;
-    p12.name=@"Cricket";
-    p12.value=@53;
-    [pieChart addPieValue:p12];
-    
-    PieValue *p13=[[PieValue alloc] init];
-    p13.r=1.0;
-    p13.g=1.0;
-    p13.b=0.3;
-    p13.a=1;
-    p13.name=@"Volleyball";
-    p13.value=@23;
-    [pieChart addPieValue:p13];
-    
-//    [self.pieChartView setModel:pieChart];//for testing purposes only
     self.pieChartView.emptyLabel=self.emptyLabel;
     self.pieChartView.legendTable=self.legendTable;
     self.pieChartView.legendColor=self.legendColor;
+    
 }
 
 - (void)setRepresentedObject:(id)representedObject {

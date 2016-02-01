@@ -137,6 +137,7 @@
         //        
     }
     [self.viewController.tableView reloadData];
+    self.viewController.pieChartView.model=nil;
 }
 
 
