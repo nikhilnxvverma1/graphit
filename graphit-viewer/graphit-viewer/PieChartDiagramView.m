@@ -27,6 +27,8 @@
     
     //if ther are no pie values
     if(self.model==nil||self.model.pieValues==nil||self.model.pieValues.count==0){
+        NSLog(@"No pie values exist");
+        self.emptyLabel.alphaValue=1;
         CGContextSetLineWidth(ctx,5);
         CGContextSetRGBStrokeColor(ctx,0.8,0.8,0.8,1);
         CGContextSetRGBFillColor(ctx,1.00,0.86,0.01,0);
@@ -35,7 +37,7 @@
         CGContextDrawPath(ctx, kCGPathFill);
         //    CGContextFillPath(ctx);
     }else{
-        
+        self.emptyLabel.alphaValue=0;
         //find the sum first
         float sum=0;
         for(PieValue *pieValue in self.model.pieValues){
@@ -67,7 +69,46 @@
     if(_model!=model){
         _model=model;
         [self setNeedsDisplay:YES];
+        [self.legendTable reloadData];
     }
+}
+
+-(void)setLegendTable:(NSTableView *)legendTable{
+    if(_legendTable!=legendTable){
+        _legendTable=legendTable;
+        _legendTable.dataSource=self;
+        _legendTable.delegate=self;
+    }
+}
+
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    NSLog(@"pie values : %lu",(unsigned long)self.model.pieValues.count);
+    return self.model.pieValues.count;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView
+   viewForTableColumn:(NSTableColumn *)tableColumn
+                  row:(NSInteger)row {
+    
+    // Retrieve to get the @"MyView" from the pool or,
+    // if no version is available in the pool, load the Interface Builder version
+
+    NSTableCellView *result;
+    PieValue *pieValue=(PieValue *)[self.model.pieValues objectAtIndex:row];
+    if(tableColumn==self.legendColor){
+        result = [tableView makeViewWithIdentifier:@"LegendColorCell" owner:self];
+        result.textField.backgroundColor=[NSColor colorWithRed:pieValue.r green:pieValue.g blue:pieValue.b alpha:pieValue.a];
+        result.textField.stringValue=@"";
+        [result.textField setDrawsBackground:YES];
+    }else{
+        result = [tableView makeViewWithIdentifier:@"LegendNameCell" owner:self];
+
+        // Set the stringValue of the cell's text field to the nameArray value at row
+        result.textField.stringValue = pieValue.name;
+    }
+    // Return the result
+    return result;
 }
 
 @end

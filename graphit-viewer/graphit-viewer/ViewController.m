@@ -51,8 +51,10 @@
     p13.value=@23;
     [pieChart addPieValue:p13];
     
-    [self.pieChartView setModel:pieChart];
-    
+//    [self.pieChartView setModel:pieChart];//for testing purposes only
+    self.pieChartView.emptyLabel=self.emptyLabel;
+    self.pieChartView.legendTable=self.legendTable;
+    self.pieChartView.legendColor=self.legendColor;
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -88,10 +90,14 @@
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification{
-    NSLog(@"Selection changed to %ld",[self.tableView selectedRow]);
+//    NSLog(@"Selection changed to %ld",[self.tableView selectedRow]);
     AppDelegate *appDelegate = (AppDelegate *)[NSApp delegate];
-    PieChart *model=[appDelegate.pieCharts objectAtIndex:[self.tableView selectedRow]];
-    [self.pieChartView setModel:model];
+    NSInteger row=[self.tableView selectedRow];
+    if(row<appDelegate.pieCharts.count){
+        PieChart *model=[appDelegate.pieCharts objectAtIndex:row];
+        [self.pieChartView setModel:model];
+    }
+
 }
 
 

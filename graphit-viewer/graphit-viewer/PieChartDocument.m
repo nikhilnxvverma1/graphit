@@ -90,6 +90,12 @@
 -(PieValue*)pieValueFromString:(NSString*)string{
     PieValue *pieValue=[[PieValue alloc] init];
     NSArray *components = [string componentsSeparatedByString:@","];//CSV
+
+    //if any line doesnt have 6 component,we just ignore and let caller handle nil
+    if(components.count<6){
+        NSLog(@"Components is %lu",(unsigned long)components.count);
+        return nil;
+    }
     int componentIndex=0;
     for (NSString *component in components){
         //strip the component of the quotes

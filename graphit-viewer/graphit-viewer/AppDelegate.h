@@ -10,6 +10,7 @@
 #import "ViewController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+- (IBAction)refresh:(id)sender;
 
 @property (strong,nonatomic) NSMutableArray *pieCharts;
 @property (strong,nonatomic) ViewController *viewController;

@@ -8,8 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 #import "PieChart.h"
-@interface PieChartDiagramView : NSView
+@interface PieChartDiagramView : NSView<NSTableViewDelegate,NSTableViewDataSource>
 
 @property (strong,nonatomic ) PieChart *model;
-
+@property (weak,nonatomic) NSTextField *emptyLabel;
+@property (weak,nonatomic) NSTableView *legendTable;
+@property (weak,nonatomic) NSTableColumn *legendColor;
 @end

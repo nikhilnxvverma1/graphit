@@ -14,6 +14,9 @@
 
 @property (weak) IBOutlet PieChartDiagramView *pieChartView;
 
+@property (weak) IBOutlet NSTextField *emptyLabel;
+@property (weak) IBOutlet NSTableView *legendTable;
+@property (weak) IBOutlet NSTableColumn *legendColor;
 
 @end
 

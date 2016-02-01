@@ -144,4 +144,9 @@
     // Insert code here to tear down your application
 }
 
+- (IBAction)refresh:(id)sender {
+    NSLog(@"Refreshing data");
+    [self.pieCharts removeAllObjects];
+    [self loadDocuments];
+}
 @end

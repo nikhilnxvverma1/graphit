@@ -104,6 +104,12 @@
 
 - (IBAction)didEditHeader:(UITextField *)sender {
 
+    //don't accept blank titles
+    if(!sender.text.length){
+        sender.text=self.detailItem.title;
+        return;
+    }
+    
     AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
     [self.detailItem setValue:sender.text forKey:@"title"];
     [delegate saveContext];
