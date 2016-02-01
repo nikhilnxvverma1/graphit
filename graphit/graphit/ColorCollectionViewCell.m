@@ -64,6 +64,7 @@
 -(void)setColorModel:(Color *)colorModel{
     _colorModel=colorModel;
     [self setRed:colorModel.red green:colorModel.green blue:colorModel.blue];
+    [self setNeedsDisplay];
 }
 
 -(void)setRed:(NSNumber*)red green:(NSNumber*)green blue:(NSNumber*)blue{

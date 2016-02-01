@@ -252,7 +252,12 @@
     }else{
         AppDelegate *delegate=(AppDelegate*)[UIApplication sharedApplication].delegate;
         [delegate.managedObjectContext deleteObject:object];
-        [self.pieChartView setNeedsDisplay];//TODO register a notification
+        // Delay execution of my block for 0.2 seconds.
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//            NSLog(@"parameter1: %d parameter2: %f", parameter1, parameter2);
+            [self.pieChartView setNeedsDisplay];//TODO register a notification instead
+        });
+
         //we will modify the document and save it to iCloud
         [self updateDocument];
     }

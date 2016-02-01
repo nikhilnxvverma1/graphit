@@ -43,8 +43,8 @@
 
 -(void)underlineTextfield:(UITextField *)textField{
     CALayer *border = [CALayer layer];
-    CGFloat borderWidth = 2;
-    border.borderColor = [UIColor darkGrayColor].CGColor;
+    CGFloat borderWidth = 1;
+    border.borderColor = [UIColor lightGrayColor].CGColor;
     border.frame = CGRectMake(0, textField.frame.size.height - borderWidth, textField.frame.size.width, textField.frame.size.height);
     border.borderWidth = borderWidth;
     [textField.layer addSublayer:border];

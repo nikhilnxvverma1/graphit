@@ -143,8 +143,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVt-QL-gR2">
-                                <rect key="frame" x="369" y="545" width="120" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVt-QL-gR2">
+                                <rect key="frame" x="390" y="545" width="120" height="30"/>
                                 <color key="backgroundColor" red="0.20784313730000001" green="0.57254901960000004" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -153,8 +153,8 @@
                                     <segue destination="dne-GV-5do" kind="unwind" identifier="submit" unwindAction="backFromPieValue:" id="L5z-HF-H08"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yan-nO-bd4">
-                                <rect key="frame" x="93" y="545" width="120" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yan-nO-bd4">
+                                <rect key="frame" x="90" y="545" width="120" height="30"/>
                                 <color key="backgroundColor" red="0.20784313730000001" green="0.57254901960000004" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -192,10 +192,10 @@
                                         <color key="backgroundColor" red="1" green="0.86348416969999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oar-RG-2bj">
-                                        <rect key="frame" x="180" y="3" width="420" height="174"/>
+                                        <rect key="frame" x="148" y="3" width="420" height="174"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RvB-uf-IIA">
-                                                <rect key="frame" x="0.0" y="36" width="420" height="17"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RvB-uf-IIA">
+                                                <rect key="frame" x="0.0" y="35" width="420" height="17"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -204,8 +204,8 @@
                                                     <outlet property="delegate" destination="fJP-Jc-XK7" id="lzk-nJ-Hld"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ba-Hp-Jvi">
-                                                <rect key="frame" x="0.0" y="123" width="420" height="17"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ba-Hp-Jvi">
+                                                <rect key="frame" x="0.0" y="122" width="420" height="17"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -232,7 +232,7 @@
                                     <constraint firstItem="rqQ-4i-f7L" firstAttribute="width" secondItem="0QJ-3y-QPO" secondAttribute="height" multiplier="29:45" id="Bl2-oN-ccP"/>
                                     <constraint firstItem="rqQ-4i-f7L" firstAttribute="centerY" secondItem="0QJ-3y-QPO" secondAttribute="centerY" id="C7p-ad-LZa"/>
                                     <constraint firstItem="rqQ-4i-f7L" firstAttribute="height" secondItem="0QJ-3y-QPO" secondAttribute="height" multiplier="0.5" id="Ill-v5-yer"/>
-                                    <constraint firstItem="Oar-RG-2bj" firstAttribute="leading" secondItem="rqQ-4i-f7L" secondAttribute="trailing" constant="52" id="Lud-L3-Z3g"/>
+                                    <constraint firstItem="Oar-RG-2bj" firstAttribute="leading" secondItem="rqQ-4i-f7L" secondAttribute="trailing" constant="20" id="Lud-L3-Z3g"/>
                                     <constraint firstItem="rqQ-4i-f7L" firstAttribute="leading" secondItem="0QJ-3y-QPO" secondAttribute="leading" constant="12" id="R0v-5c-sNz"/>
                                     <constraint firstItem="rqQ-4i-f7L" firstAttribute="centerY" secondItem="Oar-RG-2bj" secondAttribute="centerY" id="bEY-JS-EFE"/>
                                     <constraint firstItem="rqQ-4i-f7L" firstAttribute="height" secondItem="0QJ-3y-QPO" secondAttribute="height" multiplier="0.5" id="fhV-V2-4z6"/>
@@ -250,6 +250,7 @@
                                         <exclude reference="uOQ-Bb-iOt"/>
                                         <exclude reference="udz-Tz-Gpb"/>
                                         <exclude reference="6Nu-su-eVW"/>
+                                        <exclude reference="l7n-uK-uEU"/>
                                     </mask>
                                 </variation>
                             </view>
